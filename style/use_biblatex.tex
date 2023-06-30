@@ -1,0 +1,226 @@
+%%%%%%%%%%  BIBLATEX
+\usepackage[autostyle=true,english=american]{csquotes}
+%\usepackage[style=english]{csquotes}
+\DeclareQuoteAlias{russian}{ukrainian}
+% \DefineBibliographyExtras{romanian}{\restorecommand\mkbibnamefamily}
+
+\usepackage[%
+bibencoding=utf8,
+% backend=bibtex,
+backend=biber,
+% babel=other,
+% dashed=false, % print repeating authors instead of \bysame
+maxbibnames=99,
+maxcitenames=7,
+autolang=other,%
+block=none,%
+doi=true,
+url=false,
+isbn=false,
+sorting=nty,
+% language=english,
+% natbib=true,
+% defernumbers=true,
+% style=numeric,
+style=numeric-comp,
+% style=verbose,
+% style=reading
+% style=alphabetic,
+% style=ext-numeric
+% style=ieee
+]{biblatex}
+
+% suppress "In:"
+\renewbibmacro{in:}{}
+
+\providecommand{\volnumdelim}{}
+\renewcommand*{\volnumdelim}{\addcolon}
+
+
+
+%%%%%%%%%%  BIBLATEX
+\usepackage[autostyle=true,english=american]{csquotes}
+%\usepackage[style=english]{csquotes}
+\DeclareQuoteAlias{russian}{ukrainian}
+% \DefineBibliographyExtras{romanian}{\restorecommand\mkbibnamefamily}
+
+\usepackage[%
+bibencoding=utf8,
+% backend=bibtex,
+backend=biber,
+% babel=other,
+% dashed=false, % print repeating authors instead of \bysame
+maxbibnames=99,
+maxcitenames=7,
+autolang=other,%
+block=none,%
+doi=true,
+url=false,
+isbn=false,
+sorting=nty,
+% language=english,
+% natbib=true,
+% defernumbers=true,
+% style=numeric,
+style=numeric-comp,
+% style=verbose,
+% style=reading
+% style=alphabetic,
+% style=ext-numeric
+% style=ieee
+]{biblatex}
+
+% suppress "In:"
+\renewbibmacro{in:}{}
+
+\providecommand{\volnumdelim}{}
+\renewcommand*{\volnumdelim}{\addcolon}
+
+
+% \providecommand*{\bibeidpunct}{\addcomma\space}
+
+% \renewbibmacro*{volume+number+eid}{%
+%   \printfield{volume}%
+%   \setunit*{\addcolon}%
+%   \printfield{volnumdelim}%
+%   \setunit{\bibeidpunct}%
+%   \printfield{eid}}
+
+
+% \newcommand*{\volnumdelim}{\addcolon}
+% \providecommand*{\bibeidpunct}{\addcomma\space}
+
+% \renewbibmacro*{volume+number+eid}{%
+%   \printfield{volume}%
+%   \setunit*{\adddot}%
+%   \printfield{volnumdelim}%
+%   \setunit{\bibeidpunct}%
+%   \printfield{eid}}
+
+
+% remove entry "NOTE"
+\AtEveryBibitem{%
+  \clearfield{note}%
+}
+
+\DeclareLanguageMapping{ukrainian}{ukrainian-ieee}
+\DeclareLanguageMapping{russian}{russian-ieee}
+% \DefineBibliographyExtras{english}{\restorecommand\mkbibnamefamily}
+% \DefineBibliographyExtras{english}{\restorecommand\mkbibnamefamily}
+% \DefineBibliographyExtras{romanian}{\restorecommand\mkbibnamefamily}
+% \DefineBibliographyExtras{turkish}{\restorecommand\mkbibnamefamily}
+
+%  #1 - directory
+%  #2 - name of bibtex file
+%  #3 - keyword
+\newcommand\addbibfile[3]{
+    \addbibresource{texts/#1/#2.bib}
+    \DeclareSourcemap{
+        \maps{
+            \map[overwrite]{
+                \perdatasource{texts/#1/#2.bib}
+                \step[fieldset=keywords, fieldvalue={#3}]
+            }
+            \map[overwrite]{
+                \perdatasource{texts/#1/#2.bib}
+                \step[fieldsource=language, match=french,   replace=english]
+                \step[fieldsource=language, match=italian,  replace=english]
+                \step[fieldsource=language, match=romanian, replace=english]
+                \step[fieldsource=language, match=turkish,  replace=english]
+            }
+            \map{
+                \step[fieldsource=language, fieldtarget=langid]
+            }
+        }
+    }
+}
+
+
+\DeclareFieldFormat[article,book,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}{\emph{#1}} 
+\DeclareFieldFormat[article,book,inbook,incollection,inproceedings,patent,thesis,unpublished]{citetitle}{\emph{#1}} 
+\DeclareFieldFormat[article]{year}{{\bf #1}} 
+
+% \DeclareFieldFormat{postnote}{\mkcomprange[{\mkpageprefix[pagination]}]{#1}}
+% \setcounter{mincomprange}{100000}
+% \setcounter{mincompwidth}{100000}
+
+\renewcommand*{\finalnamedelim}{\addcomma\addspace}%
+\renewcommand{\bibrangedash}{-}
+
+
+
+
+\newcommand\addpaper[2]{\addbibfile{#1}{#2}{#1}}
+
+% Petrov A. V. ...
+\DeclareNameAlias{default}{family-given}
+% \DeclareNameAlias{default}{last-first}
+% remove comma after author last name:
+% so Petrov A. V. instead of Petrov, A. V.
+\renewcommand*{\revsdnamepunct}{}
+
+
+
+
+
+
+
+% \def\BIBSTYLE{style/imnanu}
+\def\PAPER #1#2#3#4#5{
+%	#1 -- the folder with a paper text
+%	#2 -- the file with a paper
+%	#3 -- basename of the file with a bibliography
+%	#4 -- language of a paper
+
+\newpage
+\ifthenelse{\equal{#5}{}}{}{\setcounter{page}{#5}}
+\CLEANALL
+\pagestyle{myplain}
+\thispagestyle{myfirstpage}
+\SET\LANGUAGE{#4}
+\graphicspath{{texts/#1/}{pics/}} % ./texts/ is the directory containing all papers
+
+\begin{refsection}[texts/#1/#3.bib]
+\selectlanguage{#4}
+\stepcounter{articlesnum}
+\protect\label{first_page:\expandafter\arabic{articlesnum}}   % initial page
+\input{texts/#1/#2}
+\AtNextBibliography{\footnotesize}
+\ifthenelse{\equal{#4}{ukrainian}}
+           {\printbibliography[keyword={#1}, title={Література}]}
+           {\printbibliography[keyword={#1}, title={References}]}
+
+% \nopagebreak\label{last_page:#1}
+\nopagebreak\label{last_page:\expandafter\arabic{articlesnum}}
+\printArticleAuthorsInfo{\thearticlesnum}
+\end{refsection}
+\clearpage
+\pagestyle{myplain}
+}
+
+
+
+
+\def\INTROPAPER #1#2#3#4{
+%	#1 -- the folder with a paper text
+%	#2 -- the file with a paper
+%	#3 -- basename of the file with a bibliography
+%	#4 -- language of a paper
+
+   \newpage
+   \ifthenelse{\equal{#4}{}}{}{\setcounter{page}{#4}}
+   \CLEANALL
+   \pagestyle{myplain}
+   \thispagestyle{myfirstpage}
+   \SET\LANGUAGE{#3}
+   \selectlanguage{#3}
+   \graphicspath{{texts/#1/}{pics/}} % ./texts/ is the directory containing all papers
+
+   \stepcounter{articlesnum}
+   \nopagebreak\label{first_page:\expandafter\arabic{articlesnum}}
+   \input{texts/#1/#2}
+   \nopagebreak\label{last_page:\expandafter\arabic{articlesnum}}
+   \clearpage
+   \pagestyle{myplain}
+}
+

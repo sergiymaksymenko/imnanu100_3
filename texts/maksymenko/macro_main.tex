@@ -1,0 +1,317 @@
+
+% -------- coloring -------------------
+% \newcommand\mycolor[1]{\color{#1}}
+\newcommand\mycolor[1]{}
+
+%--------- enumitem setup
+\setlist[enumerate]{itemsep=0.3ex, topsep=0.3ex, label={\rm(\arabic*)}}
+\setlist[itemize]{itemsep=0.3ex, topsep=0.3ex, leftmargin=4ex}
+
+
+
+% \newtheorem{theorem}[subsection]{Theorem}
+% \newtheorem{lemma}[subsection]{Lemma}
+% \newtheorem{proposition}[subsection]{Proposition}
+% \newtheorem{corollary}[subsection]{Corollary}
+% \newtheorem{claim}[subsection]{Claim}
+% \newtheorem{remark}[subsection]{Remark}
+% \newtheorem{example}[subsection]{Example}
+% \newtheorem{definition}[subsection]{Definition}
+
+% \newtheorem{subtheorem}[subsubsection]{Theorem}
+% \newtheorem{sublemma}[subsubsection]{Lemma}
+% \newtheorem{subproposition}[subsubsection]{Proposition}
+% \newtheorem{subcorollary}[subsubsection]{Corollary}
+% \newtheorem{subclaim}[subsubsection]{Claim}
+% \newtheorem{subremark}[subsubsection]{Remark}
+% \newtheorem{subexample}[subsubsection]{Example}
+% \newtheorem{subdefinition}[subsubsection]{Definition}
+
+
+% \makeatletter
+% \@addtoreset{subsection}{section}
+% %\@addtoreset{subsubsection}{section}
+% \@addtoreset{equation}{section}
+% \@addtoreset{figure}{section}
+% \@addtoreset{table}{section}
+% \makeatother
+% \renewcommand{\theequation}{\thesection.\arabic{equation}}
+% \renewcommand{\thefigure}{\thesection.\arabic{figure}}
+% \renewcommand{\thetable}{\thesection.\arabic{table}}
+
+% -------- warning --------------------
+% \newcommand\warn[1]{#1}
+
+% x
+
+\newcommand\term[2][\empty]{\myemph[#1]{#2}}
+% -------- end myemph --------------------
+
+%------------------------------------------
+\newcommand\monoArrow{\lhook\joinrel\rightarrow}
+\newcommand\longmonoArrow{\lhook\joinrel\longrightarrow}
+\newcommand\xmonoArrow[1]{\lhook\joinrel\xrightarrow{~#1~}}
+\newcommand\xlongmonoArrow[1]{\lhook\joinrel\xrightarrow{~~#1}}
+
+\newcommand\epiArrow{\rightarrow\!\!\!\!\!\to}
+\newcommand\longepiArrow{\longrightarrow\!\!\!\!\!\to}
+\newcommand\xepiArrow[1]{\xrightarrow{#1}\!\!\!\!\!\to}
+\newcommand\xlongepiArrow[1]{\xrightarrow{~#1~~~}\!\!\!\!\!\to}
+%------------------------------------------
+% 2x2-matrix and 2x1-vector
+\newcommand\amatr[4]{\left(\!\begin{smallmatrix}#1\ &#2\\[0.5mm] #3\ &#4 \end{smallmatrix}\!\right)}
+\newcommand\avect[2]{\left(\begin{smallmatrix}#1 \\ #2 \end{smallmatrix}\right)}
+%------------------------------------------
+% differentiation
+\newcommand\ddd[2]{\tfrac{\partial#1}{\partial#2}}
+%------------------------------------------
+\newcommand\Aman{A}
+\newcommand\Bman{B}
+\newcommand\Cman{C}
+\newcommand\Dman{D}
+\newcommand\Eman{E}
+\newcommand\Fman{F}
+\newcommand\Gman{G}
+\newcommand\Hman{H}
+\newcommand\Iman{I}
+\newcommand\Jman{J}
+\newcommand\Kman{K}
+\newcommand\Lman{L}
+\newcommand\Mman{M}
+\newcommand\Nman{N}
+\newcommand\Oman{O}
+\newcommand\Pman{P}
+\newcommand\Qman{Q}
+\newcommand\Rman{R}
+\newcommand\Sman{S}
+\newcommand\Tman{T}
+\newcommand\Uman{U}
+\newcommand\Vman{V}
+\newcommand\Wman{W}
+\newcommand\Xman{X}
+\newcommand\Yman{Y}
+\newcommand\Zman{Z}
+%------------------------------------------
+\newcommand\cov[1]{\tilde{#1}} % 
+\newcommand\tAman{\cov{\Aman}}
+\newcommand\tBman{\cov{\Bman}}
+\newcommand\tCman{\cov{\Cman}}
+\newcommand\tDman{\cov{\Dman}}
+\newcommand\tEman{\cov{\Eman}}
+\newcommand\tFman{\cov{\Fman}}
+\newcommand\tGman{\cov{\Gman}}
+\newcommand\tHman{\cov{\Hman}}
+\newcommand\tIman{\cov{\Iman}}
+\newcommand\tJman{\cov{\Jman}}
+\newcommand\tKman{\cov{\Kman}}
+\newcommand\tLman{\cov{\Lman}}
+\newcommand\tMman{\cov{\Mman}}
+\newcommand\tNman{\cov{\Nman}}
+\newcommand\tOman{\cov{\Oman}}
+\newcommand\tPman{\cov{\Pman}}
+\newcommand\tQman{\cov{\Qman}}
+\newcommand\tRman{\cov{\Rman}}
+\newcommand\tSman{\cov{\Sman}}
+\newcommand\tTman{\cov{\Tman}}
+\newcommand\tUman{\cov{\Uman}}
+\newcommand\tVman{\cov{\Vman}}
+\newcommand\tWman{\cov{\Wman}}
+\newcommand\tXman{\cov{\Xman}}
+\newcommand\tYman{\cov{\Yman}}
+\newcommand\tZman{\cov{\Zman}}
+%------------------------------------------
+\newcommand\bC{\mathbb{C}}
+\newcommand\bD{\mathbb{D}}
+\newcommand\bN{\mathbb{N}}
+\newcommand\bQ{\mathbb{Q}}
+\newcommand\bR{\mathbb{R}}
+\newcommand\bZ{\mathbb{Z}}
+%------------------------------------------
+\newcommand\HH{\mathcal{H}}
+\newcommand\NN{\mathcal{N}}
+\newcommand\UU{\mathcal{U}}
+\newcommand\VV{\mathcal{V}}
+\newcommand\WW{\mathcal{W}}
+\newcommand\XX{\mathcal{X}}
+\newcommand\YY{\mathcal{Y}}
+
+%------------------------------------------
+\newcommand\id{\mathrm{id}}          % identity map    
+\newcommand\IM{\mathrm{Im}}          % imaginary part
+\newcommand\RE{\mathrm{Re}}          % real part
+\newcommand\Int{\mathrm{Int}}        % interior 
+\newcommand\Per{\mathrm{Per}}        % periodic points
+\newcommand\Fix[1]{\mathrm{Fix}(#1)} % fixed points
+\newcommand\supp{\mathrm{supp\,}}    % support
+\newcommand\grad{\triangledown}      % gradient 
+\newcommand\rank{\mathsf{rank}}      % rank
+\newcommand\ev{\mathrm{ev}}          % evaluation map
+%------------------------------------------
+\newcommand\wrm[1]{\mathop{\wr}\limits_{#1}}   % wreath product with subindex
+\newcommand\scprod[2]{\langle#1,#2\rangle}     % <x,y> scalar product
+\newcommand\eps{\varepsilon}                   % epsilon
+\newcommand\conn{\nabla}                       % connection
+\newcommand\leftmaspto{\leftarrow\!\shortmid}  % left mapsto    <--|
+\newcommand\ntimes{\widetilde{\times}}         % non-trivial semidirect product 
+%------------------------------------------
+% standard groups
+\newcommand\GL{\mathrm{GL}}
+\newcommand\SL{\mathrm{SL}}
+\newcommand\SO{\mathrm{SO}}
+\newcommand\Ort{\mathrm{O}}
+\newcommand\UnitGroup{\{1\}}
+\newcommand\unit[1]{e_{#1}}
+%------------------------------------------
+\newcommand\Aut{\mathrm{Aut}}       % automorphisms
+\newcommand\Aff{\mathrm{Aff}}       % affine automorphisms
+\newcommand\Diff{\mathcal{D}}       % diffeomorphisms
+\newcommand\DiffPl{\Diff^{+}}       % diffeomorphisms preserving orientation
+\newcommand\Homeo{\mathcal{H}}      % homeomorphisms
+\newcommand\PL{\mathrm{PL}}         % PL-homeomorphisms
+\newcommand\End{\mathcal{E}}        % endomorphisms
+\newcommand\Emb{\mathrm{Emb}}       % embedding
+\newcommand\Iso{\mathrm{Iso}}       % isomorphism
+\newcommand\Isom{\mathrm{Isom}}     % group of isometries
+\newcommand\Map{\mathrm{Map}}       % maps
+\newcommand\Mat[2]{M(#1,#2)}        % space of matrices
+\newcommand\Orb{\mathcal{O}}        % orbit
+\newcommand\Stab{\mathcal{S}}       % stabilizer
+\newcommand\Maps[2]{#2^{#1}}        % space of maps X^Y (Y --> X)
+\newcommand\LDiff{\mathcal{L}} 
+\newcommand\DiffId{\Diff_{\id}}     % identity path components of diffeomorphisms
+\newcommand\HomeoId{\Homeo_{\id}}   % identity path components of homeomorphisms
+\newcommand\StabId{\Stab_{\id}}     % identity path components of stabilizer
+\newcommand\RP[1]{\mathbb{RP}^{#1}}
+\newcommand\CP[1]{\mathbb{CP}^{#1}}
+\newcommand\Dih{\mathrm{Dih}}       % Dihedral extension 
+%------------------------------------------
+% other general functional spaces
+\newcommand\Cr[1]{\mathcal{C}^{#1}}
+\newcommand\Cinfty{\mathcal{C}^{\infty}}
+\newcommand\Crm[3]{\Cr{#1}\!\left(#2,#3\right)}
+\newcommand\Cont[2]{\Crm{0}{#1}{#2}}                         % space of continuous maps
+\newcommand\Ci[2]{\mathcal{C}^{\infty}(#1,#2)}               % space of C^\infty maps
+\newcommand\Cid[2]{\mathcal{C}_{\partial}^{\infty}(#1,#2)}   % space of C^\infty maps taking constant values of the boundary
+\newcommand\Morse[2]{\mathcal{M}(#1,#2)}                     % space of Morse maps
+\newcommand\MorseSmp[2]{\mathcal{M}^{smp}(#1,#2)}            % space of simple Morse maps
+\newcommand\MorseGen[2]{\mathcal{M}^{gen}(#1,#2)}            % space of generic Morse maps
+%------------------------------------------
+% topologies
+\newcommand\Wtop{\mathsf{W}}
+\newcommand\Stop{\mathsf{S}}
+\newcommand\Wr[1]{\Wtop^{#1}}
+\newcommand\Sr[1]{\Stop^{#1}}
+\newcommand\contWW[2]{\Wtop^{#1,#2}}
+\newcommand\contSS[2]{\Stop^{#1,#2}}
+\newcommand\Jr[3]{J^{#1}(#2,#3)}
+\newcommand\jr[2]{j^{#1}(#2)}
+%------------------------------------------
+\newcommand\Stabilizer[1]{\Stab(#1)}
+\newcommand\StabilizerId[1]{\StabId(#1)}
+\newcommand\StabilizerIsotId[1]{\Stab'(#1)}
+\newcommand\Orbit[1]{\Orb(#1)}
+\newcommand\OrbitComp[2]{\Orb_{#1}(#2)}
+\newcommand\FolStabilizer[1]{\Delta(#1)}
+\newcommand\FolStabilizerId[1]{\Delta_{\id}(#1)}
+\newcommand\FolStabilizerIsotId[1]{\Delta'(#1)}
+%------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\fixsymbol{\mathrm{fix}}%{\!\times}
+\newcommand\invsymbol{}
+\newcommand\nbsymbol{\mathrm{nb}}
+\newcommand\folsymbol{*}%{\approx}
+
+% diffeomorphisms
+% preserving B / fixed on B / fixed near B
+% all / locally linear /
+
+% Diffeomorphisms of M leaving invariant the subset S
+% \DiffInv{M}{S}    => D(M;S)
+% \DiffInv[p]{M}{S} => D(M;S,p)
+\newcommand\DiffInv[3][\empty]{\Diff_{\invsymbol}(#2,#3\ifx\empty #1\relax\else,#1\fi)}
+
+% Diffeomorphisms of M fixed on the subset S
+% \DiffFix{M}{S}    => D(M,S)
+% \DiffFix[p]{M}{S} => D(M,S,p)
+\newcommand\DiffFix[3][\empty]{\Diff_{\fixsymbol}(#2,#3\ifx\empty #1\relax\else,#1\fi)}
+
+% Diffeomorphisms of M fixed near the subset S
+% \DiffNb{M}{S}    => Dnb(M,S)
+% \DiffNb[p]{M}{S} => Dnb(M,S,p)
+\newcommand\DiffNb[3][\empty]{\Diff_{\nbsymbol}(#2,#3\ifx\empty #1\relax\else,#1\fi)}
+
+% Diffeomorphisms of M fixed on the subset S and with index 0 
+\newcommand\DiffHFix[3][\empty]{\Diff^{0}_{\fixsymbol}(#2,#3\ifx\empty #1\relax\else,#1\fi)}
+
+% Diffeomorphisms of M fixed on the subset S and with index 0 
+\newcommand\DiffHNb[3][\empty]{\Diff^{0}_{\nbsymbol}(#2,#3\ifx\empty #1\relax\else,#1\fi)}
+
+
+
+% Diffeomorphisms of M fixed on the subset S
+\newcommand\DiffPlusFix[3][\empty]{\Diff^{+}_{\fixsymbol}(#2,#3\ifx\empty #1\relax\else,#1\fi)}
+
+
+% \DiffFol[p]{M}{S} => D^{*}(M,S,p) foliated diffeomorphisms
+\newcommand\FDiff[2][\empty]{\Diff^{\folsymbol}(#2\ifx\empty #1\relax\else,#1\fi)}
+\newcommand\FDiffFix[2][\empty]{\Diff^{\folsymbol}_{\fixsymbol}(#2\ifx\empty #1\relax\else,#1\fi)}
+\newcommand\FDiffA[2][\empty]{\Diff^{=}(#2\ifx\empty #1\relax\else,#1\fi)}
+
+
+
+%------------------------------------------
+% Automorphisms of vector bundle
+\newcommand\VBAut[2][\empty]{\GL(#2\ifx\empty #1\relax\else,#1\fi)}
+
+%------------------------------------------
+\newcommand\DiffLP{\Diff}  % leaf preserving diffeomorphisms
+% Diffeomorphisms of M leaving invariant a subset S
+% \DiffInv{M}{S}    => D(M;S)
+% \DiffInv[p]{M}{S} => D(M;S,p)
+\newcommand\DiffLPInv[3][\empty]{\DiffLP_{inv}(#2,#3\ifx\empty#1\relax\else,#1\fi)}
+
+% Diffeomorphisms of M fixed on a subset S
+% \DiffFix{M}{S}    => D(M,S)
+% \DiffFix[p]{M}{S} => D(M,S,p)
+\newcommand\DiffLPFix[3][\empty]{\DiffLP_{fix}(#2,#3\ifx\empty#1\relax\else,#1\fi)}
+
+% Diffeomorphisms of M fixed near a subset S
+% \DiffNb{M}{S}    => Dnb(M,S)
+% \DiffNb[p]{M}{S} => Dnb(M,S,p)
+\newcommand\DiffLPNb[3][\empty]{\DiffLP_{nb}(#2,#3\ifx\empty#1\relax\else,#1\fi)}
+
+%-------------------------------------------
+\newcommand\afunc{\alpha}
+\newcommand\bfunc{\beta}
+\newcommand\cfunc{\gamma}
+\newcommand\dfunc{\delta}
+\newcommand\func{f}
+\newcommand\gfunc{g}
+\newcommand\dif{h}
+\newcommand\gdif{g}
+\newcommand\qdif{q}
+\newcommand\rphi{{\mycolor{red}\phi}}
+
+%-------------------------------------------
+% points 
+\newcommand\pb{b}
+\newcommand\pc{c}
+\newcommand\px{x}
+\newcommand\py{y}
+\newcommand\pz{z}
+\newcommand\pu{u}
+\newcommand\pv{v}
+\newcommand\pw{w}
+\newcommand\pui[1]{\pu_{#1}}
+\newcommand\pvi[1]{\pv_{#1}}
+\newcommand\pxi[1]{\px_{#1}}
+\newcommand\pwi[1]{\pw_{#1}}
+\newcommand\pyi[1]{\py_{#1}}
+\newcommand\bpx{\bar{\px}}
+\newcommand\bpv{\bar{\pv}}
+\newcommand\bpvi[1]{\bar{\pv}_{#1}}
+\newcommand\bpxi[1]{\bar{\px}_{#1}}
+
+%%-------------------
+\newcommand\Circle{S^1}
+\newcommand\UInt{[0;1]}      % unit interval [0;1]

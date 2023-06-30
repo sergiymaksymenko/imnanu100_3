@@ -1,0 +1,76 @@
+\ifdefined\XELATEX\input{style/xelatex.tex}\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[ukrainian,russian,english]{babel}
+\usepackage{tikz}
+\usepackage{mathrsfs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[ukrainian]{style/imnanu}
+
+\usepackage{enumitem}
+\usepackage{amssymb, amscd}
+\usepackage{mathtools}
+\usepackage{mathabx}
+\usepackage{verbatim}
+\usepackage{bbm}
+
+\usepackage{multicol}
+\usepackage[all]{xy}
+\usepackage{textpos}
+\usepackage{longtable}
+
+\usepackage{tabu}
+\usepackage{bm}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage{pdfpages}  % for inserting cover page as PDF
+
+
+
+
+%\usepackage{microtype} % making text narrow
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \usepackage{listings}
+% \lstset
+% { %Formatting for code in appendix
+%     language=Python,
+%     basicstyle=\small\ttfamily,
+%     numbers=left,
+%     stepnumber=1,
+%     showstringspaces=false,
+%     tabsize=1,
+%     breaklines=true,
+%     breakatwhitespace=false,
+%     xleftmargin=5ex
+% }
+
+\graphicspath{{texts/}{pics/}}
+
+
+
+%%%%%%%
+\usepackage{hyperref}
+\def\PDFSTYLE{1}
+\urlstyle{same}
+\ifthenelse{\equal{\PDFSTYLE}{1}}%
+{%
+%%%%%%%  Make color links for PDF file
+    \hypersetup{
+        hypertexnames=false,
+        colorlinks,
+        linkcolor={red!50!black},
+        citecolor={blue!50!black},
+        urlcolor={blue!80!black}
+    }
+}%
+{
+    %%%%%%%  Make all links black for printing
+    \hypersetup{hidelinks, hypertexnames=false}
+}
+
+
+\newcommand\ie{\textit{i.e.}\ }
+\newcommand\eg{\textit{e.g.}\ }

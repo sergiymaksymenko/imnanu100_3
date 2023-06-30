@@ -1,0 +1,63 @@
+\usepackage[noadjust]{cite}
+\usepackage{bibunits}
+\def\BIBSTYLE{style/plainurl}
+\def\PAPERX #1#2#3#4#5{
+%	#1 -- the folder with a paper text
+%	#2 -- the file with a paper
+%	#3 -- basename of the file with a bibliography
+%	#4 -- language of a paper
+\newpage
+\ifthenelse{\equal{#5}{}}{}{\setcounter{page}{#5}}
+\CLEANALL
+\pagestyle{myplain}
+\thispagestyle{myfirstpage}
+\SET\LANGUAGE{#4}
+\selectlanguage{#4}
+\graphicspath{{texts/#1/}{pics/}{texts/#1/pics/}} % ./texts/ is the directory containing all papers
+
+\protect\label{first_page:\expandafter\arabic{articlesnum}}   % initial page
+
+% \vskip-1.4cm
+% \hfill\includegraphics[height=0.5cm]{by.png}~\includegraphics[height=0.5cm]{ONUT_gray.png}
+
+% \vskip-0.7cm
+
+
+{\begin{bibunit}[\BIBSTYLE]
+\input{texts/#1/#2}
+
+\putbib[texts/#1/#3]
+
+\smallskip
+
+\printReceivedAccepted{\thearticlesnum}
+
+\printArticleAuthorsInfo{\thearticlesnum}
+\nopagebreak\label{last_page:\expandafter\arabic{articlesnum}}
+\clearpage
+\pagestyle{myplain}
+\end{bibunit}}
+}
+
+
+%	#1 -- the folder with a paper text
+%	#2 -- the file with a paper
+%	#3 -- basename of the file with a bibliography
+%	#4 -- language of a paper
+\def\PAPER #1#2#3#4#5{
+   \stepcounter{articlesnum}
+   \ifthenelse
+        {\isundefined{\PRINTTHISPAPER}}
+        {\PAPERX{#1}{#2}{#3}{#4}{#5}}
+        {\ifthenelse{\equal{\PRINTTHISPAPER}{\thearticlesnum}}
+                    {\PAPERX{#1}{#2}{#3}{#4}{#5}}
+                    {}
+        }
+}
+
+
+
+\def\PAPERPAGE #1#2#3#4#5{%
+\setcounter{page}{#1}%
+\PAPER{#2}{#3}{#4}{#5}%
+}

@@ -1,0 +1,220 @@
+\newcommand\Klein{\Kman}
+\newcommand\SKlein{\mathbf{\Kman}}
+\newcommand\Klev[1]{\Kman_{#1}}
+\newcommand\Func{F}
+
+\newcommand\STorus{\mathbf{T}}
+\newcommand\Tlev[1]{\Tman_{#1}}
+
+\newcommand\PrjPlane{\bR{P}^2}
+
+% groups of diffeomorphisms of manifolds
+\newcommand\DiffM{\Diff(\Mman)}
+\newcommand\DiffMX{\Diff(\Mman,\Xman)}
+\newcommand\DiffP{\Diff(\Pman)}
+\newcommand\DiffR{\Diff(\bR)}
+
+\newcommand\DiffA{\Diff(\Aman)}
+\newcommand\DiffPlA{\DiffPl(\Aman)}
+
+\newcommand\DiffI{\Diff(\UInt)}
+\newcommand\DiffPlI{\Diff^{+}(\UInt)}
+
+% products of groups of diffeomorphisms
+\newcommand\DiffMP{\DiffM\times\DiffP}
+\newcommand\DiffPM{\DiffP\times\DiffM}
+\newcommand\DiffAM{\DiffA\times\DiffM}
+\newcommand\DiffAMX{\DiffA\times\DiffMX}
+\newcommand\DiffPlAM{\DiffPlA\times\DiffM}
+\newcommand\DiffMR{\DiffM\times\DiffR}
+\newcommand\DiffRM{\DiffR\times\DiffM}
+
+% spaces of smooth maps
+\newcommand\CiMP{\Ci{\Mman}{\Pman}}
+\newcommand\CiMR{\Ci{\Mman}{\bR}}
+
+
+
+\newcommand\StabLR[1]{\Stab_{\text{\sf LR}}(#1)}   % left-right stabilizer
+\newcommand\StabR[1]{\Stab_{\text{\sf R}}(#1)}     % right stabilizer
+
+% left-right stabilizer, only diffeomorphisms of the image are used
+\newcommand\StabLRImg[1]{\Stab_{\text{\sf LR}}^{img}(#1)}
+% left-right stabilizer, only preserving orientation diffeomorphisms of the image are used
+\newcommand\StabLRImgPl[1]{\Stab_{\text{\sf LR}}^{img+}(#1)}
+
+% left-right stabilizers of a function
+\newcommand\SMPf{\StabLR{\func}}
+\newcommand\SMRf{\StabLR{\func}}
+\newcommand\SMAf{\StabLRImg{\func}}
+\newcommand\SPlMAf{\StabLRImgPl{\func}}
+
+% right stabilizer of a function
+\newcommand\SMf{\StabR{\func}}
+
+
+\newcommand\SMAfd{\StabLRImg{\func,\partial\ATor}}
+\newcommand\SMfd{\StabR{\func,\partial\ATor}}
+
+\newcommand\CinftyEeven{\Cinfty_{\mathrm{ev}}}  % space of even functions
+
+
+
+% manifolds:
+\newcommand\ATor{\mathbf{T}}  % solid torus
+\newcommand\AOTor{\mathbf{U}} % interior of the solid torus
+
+\newcommand\gxi{{\mycolor{blue}\xi}} % gluing map
+
+\newcommand\Lpq[2]{L_{#1,#2}} % Lens space Lpq
+
+\newcommand\FolDiff{\Diff^{fol}}    % foliated diffeomorphisms
+\newcommand\FolDiffPl{\FolDiff_{+}} % foliated diffeomorphisms preserving some "direction"
+\newcommand\FolLpDiff{\Diff^{lp}}   % leaf-preserving diffeomorphisms
+
+\newcommand\Foliation{\mathcal{F}}
+\newcommand\GFoliation{\mathcal{G}}
+\newcommand\AFoliation{\Foliation}
+\newcommand\BFoliation{\GFoliation}
+\newcommand\FolLpq[2]{\AFoliation_{#1,#2}}    % Foliation on Lpq
+\newcommand\leaf[1]{\Lman_{#1}}
+
+
+\newcommand\vbp{{\mycolor{blue}p}}  % projection
+\newcommand\vbq{{\mycolor{blue}q}}
+
+
+% coordinates in the solid torus S^1 x D^2
+\newcommand\al{{\mycolor{red}w}}
+\newcommand\az{{\mycolor{red}\pz}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\difmatr[1]{\mathsf{#1}}
+\newcommand\diftor[1]{\gdif_{#1}}
+\newcommand\diflpq[1]{\widehat{#1}}
+
+%% specific matrices
+\newcommand\mXimatr{\difmatr{X}}
+\newcommand\mAmatr{\difmatr{A}}
+\newcommand\mBmatr{\difmatr{B}}
+\newcommand\mDtwist{\difmatr{D}}
+\newcommand\mLambda{\difmatr{\Lambda}}
+\newcommand\mMu{\difmatr{M}}
+\newcommand\mTau{\difmatr{T}}
+
+%% specific diffeomorphisms of the solid torus
+\newcommand\hDtwist{d}
+\newcommand\hLambda{\lambda}
+\newcommand\hMu{\mu}
+\newcommand\hTau{\tau}
+\newcommand\hRho[1]{\rho_{#1}}  % rotation
+
+%% specific diffeomorphisms of the lens space
+\newcommand\lDtwist{\diflpq{\hDtwist}}
+\newcommand\lLambda{\diflpq{\hLambda}}
+\newcommand\lMu{\diflpq{\hMu}}
+\newcommand\lTau{\diflpq{\hTau}}
+\newcommand\lRot[1]{\diflpq{\hRho{#1}}}
+\newcommand\lTheta{\diflpq{\theta}}
+\newcommand\lSigmaPl{\sigma_{+}}
+\newcommand\lSigmaMin{\sigma_{-}}
+\newcommand\lSigmaPM{\sigma_{\pm}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% diffeomorphisms of the solid torus
+\newcommand\DiffATor{\Diff(\ATor)}
+\newcommand\DiffdATor{\Diff(\ATor, \partial\ATor)}
+
+% diffeomorphisms of the solid torus preserving a foliation
+\newcommand\FolDiffdATor{\FolDiff(\AFoliation, \partial\ATor)}     % foliated diffeomorphisms
+\newcommand\FolLpDiffdATor{\FolLpDiff(\AFoliation, \partial\ATor)} % leaf preserving diffeomorphisms
+
+% diffeomorphisms of a manifold preserving \AFoliation
+\newcommand\DiffAFol{\FolDiff(\AFoliation)}
+\newcommand\DiffPlAFol{\FolDiffPl(\AFoliation)}
+\newcommand\DiffAFolLp{\FolLpDiff(\AFoliation)}
+
+
+% mapping class group:
+\newcommand\MPGSolidTorus{\mathcal{G}} % \pi_0 Diff(S^1 x D^2)
+
+% groups of diffeomorphisms of S^1 x D^2
+\newcommand\RotSub{\mathcal{R}}        % rotation subgroup
+\newcommand\AffDiffATor{\mathcal{T}}   % R x G - semidirect product in GL(2,Z) -  "affine" subgroup of Diff(S^1 x D^2)
+
+% groups of diffeomorphisms of Lpq
+\newcommand\ADiffLpq[1]{\mathcal{L}_{#1}}
+\newcommand\AFolDiffLpq[1]{\widehat{\mathcal{L}}_{#1}}
+
+
+\newcommand\DLpq[2]{\Diff(\BLman_{#1,#2})}
+
+\newcommand\FolDiffLpq[2]{\FolDiff(\AFoliation_{#1,#2})}
+\newcommand\FolDiffPlLpq[2]{\FolDiffPl(\AFoliation_{#1,#2})}
+\newcommand\FolLpDiffLpq[2]{\FolLpDiff(\AFoliation_{#1,#2})}
+
+\newcommand\PAFoliation{\AFoliation}
+
+
+\newcommand\AATor{\ATor_{0}}
+\newcommand\BATor{\ATor_{1}}
+\newcommand\ATori{\ATor_{i}}
+
+\newcommand\BLman{\mathbf{\Lman}}
+\newcommand\PBLman{\BLman_{\gxi}}
+
+
+\newcommand\xtor[2]{{}^{#1}_{#2}}
+
+% \newcommand\diflpdir[4][2em]{#2:\xtor{0}{1}\mathop{\Rightarrow}\limits_{#4}^{#3}\xtor{0}{1}}
+% \newcommand\diflprew[4][2em]{#2:\xtor{0}{1}\mathop{\Rightarrow}\limits_{#4}^{#3}\xtor{1}{0}}
+
+\newcommand\xar[2]{ \ar@{=>}[r]^-{#1}_-{#2}}
+
+\newcommand\diflpdir[4][1.4em]{\xymatrix@C=#1{#2: \xtor{0}{1} \xar{#3}{#4} & \xtor{0}{1}}}
+\newcommand\diflprew[4][1.4em]{\xymatrix@C=#1{#2: \xtor{0}{1} \xar{#3}{#4} & \xtor{1}{0}}}
+
+
+% \newcommand\diflpdir[4][2em]{\!\xymatrix@C=#1{\!#2: {}^{0}_{1} \ar@^{->}@<.2ex>[r]^-{#3} \ar@_{->}@<-.2ex>[r]_-{#4} & {}^{0}_{1}\!}}
+% \newcommand\diflprew[4][2em]{\!\xymatrix@C=#1{\!#2: {}^{0}_{1} \ar@^{->}@<.2ex>[r]^-{#3} \ar@_{->}@<-.2ex>[r]_-{#4} & {}^{1}_{0}\!}}
+
+
+% \newcommand\diflprew[4][2em]{\!\xymatrix@C=#1{\!#2: {}^{0}_{0} \ar@^{->}@<.2ex>[r]^-{#3}  & {}^{1}_{1}\ar@^{->}@<.2ex>[l]^-{#4}\!}}
+
+% \newcommand\diflpdir[4][2em]{\!\xymatrix@C=#1{\!#2: \ATor^{0}_{1} \ar@^{->}@<.2ex>[r]^-{#3} \ar@_{->}@<-.2ex>[r]_-{#4} & \ATor^{0}_{1}\!}}
+% \newcommand\diflprew[4][2em]{\!\xymatrix@C=#1{\!#2: \ATor^{0}_{0} \ar@^{->}@<.2ex>[r]^-{#3}  & \ATor^{1}_{1}\ar@^{->}@<.2ex>[l]^-{#4}\!}}
+
+% \newcommand\diflpdir[4][2em]{\!\xymatrix@C=#1{\!#2: \ATor^{0}_{1} \ar@^{->}@<.2ex>[r]^-{#3} \ar@_{->}@<-.2ex>[r]_-{#4} & \ATor^{0}_{1}\!}}
+% \newcommand\diflprew[4][2em]{\!\xymatrix@C=#1{\!#2: \ATor^{0}_{0} \ar@<.2ex>[r]^-{#3}  & \ATor^{1}_{1}\ar@<.2ex>[l]^-{#4}\!}}
+
+\newcommand\prM{p_2}
+\newcommand\prA{p_1}
+
+
+\newcommand\JProp{{\rm(J)}} % property (J)
+\newcommand\BProp{{\rm(B)}} % property (B)
+\newcommand\Calg[2]{\mathcal{C}_{#1}^{\infty}(#2)}  % algebra of germs
+\newcommand\Jideal[2]{J_{#1}(#2)} % Jacobi ideal
+
+\newcommand\CiTwoFol{\Cinfty(\AFoliation_0,\AFoliation_1)}
+\newcommand\DiffTwoFol{\Diff(\AFoliation_0,\AFoliation_1)}
+
+\newcommand\jjj[1]{#1_{1}}
+\newcommand\iii[1]{#1_{0}}
+
+
+\newcommand\gA{A}
+\newcommand\gB{B}
+\newcommand\gC{C}
+
+
+\newcommand\rt[2]{\!\sqrt[#2]{#1}}
+\newcommand\ophi{{\mycolor{green}q}}
+\newcommand\prC{p}
+\newcommand\sincl{j}
+
+\newcommand\smprM{{\mycolor{red}{\sigma}}}
+\newcommand\smprA{{\mycolor{red}{\theta}}}

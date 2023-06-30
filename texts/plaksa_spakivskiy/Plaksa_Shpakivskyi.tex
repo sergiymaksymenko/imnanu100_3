@@ -1,0 +1,1948 @@
+
+
+% !TeX encoding = UTF-8
+\documentclass[11pt, reqno]{amsart}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english,ukrainian,russian]{babel}
+
+\usepackage{imnanu}  % main style file
+
+\usepackage{amssymb, enumitem}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[all]{xy}
+
+
+%% if you need to change parameters
+% \SET{\Year}{2021}
+% \SET{\Volume}{12}
+% \SET{\Number}{5}
+
+\sloppy
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%!!!!!! do not change this line - it will print the correct number of the first page
+\label{first_page:\thearticlesnum}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%% PRINT INFORMATION ABOUT AUTHORS
+
+%------ uncomment paper language
+\selectlanguage{ukrainian}
+% \selectlanguage{russian}
+% \selectlanguage{english}
+
+
+%------ information about each author
+\author{С.~А.~Плакса}
+\address{Інститут математики НАН України, м.~Київ}
+\email{plaksa@imath.kiev.ua, plaksa62@gmail.com}
+% \orcid{}
+
+\author{В.~С.~Шпаківський}
+\address{Інститут математики НАН України, м.~Київ}
+\email{shpakivskyi86@gmail.com}
+% \orcid{}
+
+
+
+\title[Інтегральні теореми в скінченновимірній
+комутативній алгебрі]{Інтегральні теореми в скінченновимірній
+комутативній алгебрі}
+
+%------ abstracts
+\abstract{english}{For monogenic (continuous and differentiable in the sense of G\^ateaux)
+functions given in special real subspaces of an arbitrary finite-dimensional
+commutative associative algebra over the complex field and taking values in this algebra,
+we establish basic properties analogous to properties of holomorphic functions of a complex variable.
+Methods for proving results are based on a representation of monogenic functions via holomorphic functions of complex
+ variables that allows to establish analogues of Cauchy--Riemann conditions and the continuity
+  of G\^ateaux derivatives of all orders for monogenic functions. In such a way, analogues of a number of classical theorems
+   of complex analysis (the Cauchy integral theorem for a curvilinear integral, the Cauchy integral formula, the Morera
+theorem, the Taylor theorem) are proved and different equivalent definitions
+for the mentioned monogenic functions are established.
+An analogue of the Cauchy theorem for an integral over non piecewise smooth surfaces is proved.}
+
+
+
+\abstract{ukrainian}{Для моногенних (неперервних і диференційовних за Гато) функцій, що
+визначені у спеціальних дійсних підпросторах довільної скінченновимірної комутативної асоціативної алгебри над
+комплексним полем і примають значення в цій алгебрі, встановлено основні властивості,
+аналогічні властивостям голоморфних функцій комплексної змінної.
+Методи дослідження базуються на представленні моногенних функцій через голоморфні функції
+комплексних змінних, що дає змогу встановити аналоги умов Коші--Рімана та
+неперервність похідних Гато всіх порядків для моногенних функцій.
+У такий спосіб доведено аналоги ряду класичних теорем комплексного аналізу
+(інтегральна теорема Коші для криволінійного інтеграла, інтегральна формула Коші,
+теорема Морера, теорема Тейлора) та
+встановлено різні еквівалентні означення моногенних функцій.
+Доведено аналог теореми Коші для поверзневого інтеграла по не кусково гладких поверхнях.}
+
+% \abstract{russian}{
+% В данной работе мы ...
+% }
+
+
+\keywords{комутативна банахова алгебра, моногенна функція, аналітична функція, гіперголоморфна функція, умови Коші--Рімана,
+теорема Коші, інтегральна формула Коші, теорема Морера, теорема Тейлора}
+\udc{517.54, 519.95}
+\msc{30G35, 35J05, 31A30}
+%% DOI of the current paper
+% \doi{}
+
+\maketitle
+
+
+%--------------- parer text
+\section{Вступ}\label{1sec1}
+
+
+З середини 70-х років минулого століття в Інституті математики НАН
+України, починаючи з роботи І.П.~Мельниченка \cite{Mel'nichenko75},
+систематично і послідовно розробляється
+алгебраїчно-аналітичний підхід до основних еліптичних рівнянь
+математичної фізики, який пов'язаний з використанням комутативних
+алгебр.
+
+Ідея такого підходу полягає у знаходженні комутативних
+банахових алгебр таких, щоб диференційовні за Гато
+функції зі значеннями в цих алгебрах мали компоненти, які є
+розв'язками заданих рівнянь з частинними похідними.
+
+Такі алгебри були знайдені І.П.~Мельниченком для
+тривимірного рівняння Лапласа (див.
+\cite{Mel'nichenko75,Mel'nichenko03,Mel-Plaksa}) і еліптичних
+рівнянь з виродженням на осі, що описують осесиметричні
+потенціальні поля (див. \cite{M2,Mel-Plaksa}), В.Ф.~Ковальовим і
+І.П.~Мельниченком для двовимірного бігармонічного рівняння (див.
+\cite{Kov-Mel,Mel'nichenko86}) і узагальненого бігармонічного
+рівняння (див. \cite{Kov-Mel-pr91}).
+Згодом, в роботах \cite{Pl-Zb-2013,Pla-Shp-Bull-2012} показано, що для опису всіх просторових гармонічних функцій
+у формі компонент диференційовних за Гато гіперкомплексних функцій
+відповідні нескінченновимірні комутативні банахові
+алгебри необхідно включити у топологiчнi векторнi простори з тим же базисом і топологією покоординатної збіжності.
+
+
+Інтерес до дослідження функцій в комутативних алгебрах
+гіперкомплексних чисел останнім часом зростає у зв'язку з
+поєднанням зручностей властивості комутативності з широкими
+можливостями застосувань (див., наприклад, монографії
+Г.Б,~Прайса \cite{Price}, Д.~Бокалетті та ін. \cite{Boc-Cat}, М.Е.~Луна-Елізаррарас та ін. \cite{Luna-Shapiro-Struppa}
+і роботи В.В.~Кісіля \cite{Kisil12,Kisil2-12}, А.~Погоруя, М.Н.~Родрігеса-Даніно і М.~Шапіро \cite{Pogor-Ramon-Shap},
+в яких вивчаються різноманітні алгебраїчні, геометричні і
+аналітичні аспекти теорії гіперкомплексних чисел).
+
+
+
+Зрозуміло, що для успішної реалізації вказаного вище підходу до основних еліптичних рівнянь
+математичної фізики, необхідно
+розповсюдити класичні методи теорії голоморфних
+функцій комплексної змінної %та функціонального аналізу стосовно конктретних
+на диференційовні за Гато функції, задані в банахових алгебрах, асоційованих з рівняннями математичної
+фізики.
+Ускладненість ситуації при цьому полягає в обмеженості можливостей переносу класичних теорем комплексного
+аналізу в аналіз на банахових алгебрах.
+
+У роботі Е.Р.~Лорха \cite{Lorch} доведено інтегральну теорему Коші та інтегральну формулу Коші,
+теореми Тейлора та Морера для функцій, диференційовних у сенсі
+Лорха в довільній опуклій області комутативної банахової алгебри. Умову опуклості області в цих результатах
+було знято Е.К.~Блюмом \cite{Blum}.
+
+
+У той же час, застосування диференціовних функцій зі значеннями в комутативних банахових алгебрах
+до побудови розв'язків рівнянь математичної фізики
+вимагає дослідження таких функцій у спеціальних дійсних підпросторах вказаних алгебр (див. цитовані роботи
+\cite{Mel'nichenko75,Mel'nichenko03,Mel-Plaksa,Kov-Mel,Mel'nichenko86,Kov-Mel-pr91,Pl-Zb-2013,Pla-Shp-Bull-2012}
+та роботи П.В.~Кетчума \cite{Ketchum-28, Ketchum-29}, Л.~Собреро \cite{Sobrero}) і М.Н.~Рошкулеця \cite{Rosculet}.
+
+У цій роботі розглядаються моногенні (тобто неперервні та диференційовні за Гато) функції
+$\Phi : \Omega\rightarrow\mathbb{A}$, що визначені в області $\Omega$ певного дійсного підпростору $E_{3}$
+скінченновимірної комутативної асоціативної алгебри $\mathbb{A}$ з одиницею над полем комплексних чисел
+і приймають значення в цій алгебрі.
+
+Як буде показано, основні властивості таких моногенних функцій
+аналогічні властивостям голоморфних функцій комплексної змінної.
+Методи дослідження базуються на представленні моногенних функцій через голоморфні функції
+комплексних змінних, що дає змогу встановити аналоги умов Коші--Рімана та
+неперервність похідних Гато всіх порядків для моногенних функцій.
+У такий спосіб доведено аналоги ряду класичних теорем комплексного аналізу
+(інтегральна теорема Коші для криволінійного інтеграла, інтегральна формула Коші,
+теорема Морера, теорема Тейлора) та
+встановлено різні еквівалентні означення моногенних функцій.
+
+Встановлені результати узагальнюють відповідні результати робіт
+\cite{Pl-Shp2,Pl-Shp3,Plaksa12,Pl-Shp-Al,Pukh-5} для моногенних функцій в конкретних
+скін\-чен\-но\-ви\-мір\-них комутативних асоціативних алгебрах.
+Згадаємо також роботи П.В.~Кетчума \cite{Ketchum-28,Ketchum-29},
+В.~Гончарова \cite{Goncharow} і М.Н.~Рошкулеця \cite{Rosculet-54,Rosculet-55},
+в яких аналоги теореми Коші та інтегральної формули Коші для криволінійного інтеграла
+встановлено в інших конкретних комутативних алгебрах.
+
+Вкажемо роботи, в яких деякі інтегральні теореми доведено в некомутативних алгебрах.
+Так, ряд гіперкомплексних аналогів інтегральної теореми Коші для криволінійного інтеграла
+встановлено в роботах А.~Садбері \cite{Sudbery},  Ф.~Коломбо, І.~Сабадіні і Д.~Струппи \cite{Colombo}.
+В роботах А.~Садбері \cite{Sudbery}, Ф.~Брекса, Р.~Деланга і Ф.~Соммена
+\cite{Brakx}, В.В.~Кравченка і М.В.~Шапіро
+\cite{Krav-Shap}, С.~Бернштейн \cite{Bernstein}, О.Ф.~Геруса \cite{Gerus-2011}
+подібні теореми доведено для поверхневого інтеграла.
+
+
+\vskip 1mm
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Моногенні функції в скінченновимірній комутативній асоціативній алгебрі}
+
+Нехай $\mathbb A$ --- $n$-вимірна комутативна асоціативна банахова
+алгебра з одиницею $1$ над полем дійсних чисел $\mathbb R$ або над
+полем комплексних чисел $\mathbb C$,\,\, $3\le n\le\infty$\,.
+
+Розглянемо в алгебрі $\mathbb{A}$ вектори $e_1=1$, $e_2, e_3$,
+лінійно незалежні над полем $\mathbb{R}$. Це означає, що рівність
+$$\alpha_1e_1+\alpha_2e_2+\alpha_3e_3=0,\qquad \alpha_1,\alpha_2,
+\alpha_3\in\mathbb{R},$$
+виконується тоді і тільки тоді, коли $\alpha_1=\alpha_2=
+\alpha_3=0$.
+
+Нехай $E_3:=\{\zeta :=xe_1+ye_2+ze_3\,: \,\,x,y,z\in\mathbb R\}$ ---
+лінійна оболонка векторів $e_1,e_2,e_3$ над полем $\mathbb R$.
+
+Будемо використовувати однакове позначення $\Omega$ для області
+$\Omega\subset{\mathbb R}^3$ і для області в $E_3$, яка є
+конгруентною  до області $\Omega$.
+
+
+%%%%%%%%%%%%%
+\subsection{Диференційовність за Лорхом і за Гато. Моногенні і аналітичні функції}
+
+
+Розглянемо функцію $\Phi \colon \Omega\rightarrow\mathbb{A}$,
+визначену в області $\Omega\subset E_3$, і поняття
+диференційовності цієї функції за Лорхом і за Гато.
+
+
+Функція $\Phi \colon \Omega \rightarrow \mathbb{A}$
+називається {\em диференційовною за Лорхом} (див. \cite{Lorch}) в
+області $\Omega\subset E_3$, якщо для кожної точки
+$\zeta\in\Omega$ існує елемент $\Phi_L'(\zeta)\in\mathbb{A}$
+такий, що для кожного $\varepsilon>0$ існує $\delta>0$ таке, що
+для всіх $h\in E_3$\,,\, для яких\, $\|h\| <\delta$\,, виконується
+нерівність
+\begin{equation}\label{difLorch}
+\left\|\Phi(\zeta+h)-\Phi(\zeta)-h\Phi_L'(\zeta)\right\|\leq\|h\|\,\varepsilon\,.
+\end{equation}
+Очевидно, що в нерівності (\ref{difLorch})
+ {\em похідна Лорха} $\Phi_L'(\zeta)$ є функцією
+змінної $\zeta$, тобто\, $\Phi_L' \colon
+\Omega\rightarrow\mathbb{A}$\,.
+
+
+Зазначимо, що динференційовними за Лорхом функціями в комутативних
+асоціативних банахових алгебрах над полем $\mathbb{C}$ є, зокрема,
+головні продовження (див., наприклад, монографію Е.~Хілле і Р.~Філліпса \cite[с.~182]{Hil_Filips})
+голоморфних функцій комплексної змінної. Якщо комплексна функція
+$F$ є голоморфною в області $D\subset \mathbb{C}$, то для усіх
+$\zeta\in \mathbb{A}$, спектр яких міститься в $D$, головне
+продовження функції $F$ виражається рівністю
+\begin{equation}\label{pr-ext}
+\frac{1}{2\pi i}\int\limits_{\Gamma}
+F(t)\,(t-\zeta)^{-1}\,dt\,,
+\end{equation}
+де $\Gamma$ --- довільна замкнена спрямлювана жорданова
+крива в $D$, яка охоплює спектр елемента $\zeta$\,.
+
+
+Використовуючи диференціал Гато,  І.П.~Мельниченко
+\cite{Mel'nichenko75} розглянув похідну Гато функції $\Phi \colon \Omega\rightarrow\mathbb{A}$
+також як функцію точки $\zeta\in\Omega$.
+
+
+Ми кажемо, що функція $\Phi \colon
+\Omega\rightarrow\mathbb{A}$ є {\em диференційовною за Гато} в
+області $\Omega\subset E_3$, якщо для кожної точки
+$\zeta\in\Omega$ існує елемент $\Phi_G'(\zeta)\in\mathbb{A}$
+такий, що
+\begin{equation}\label{Gprz}
+\lim\limits_{\delta\rightarrow 0+0} \left(\Phi(\zeta+\delta
+h)-\Phi(\zeta)\right)\delta^{-1}= h\Phi_G'(\zeta)\quad\forall h\in
+E_{3}.
+\end{equation}
+Очевидно, що
+{\em похідна Гато} $\Phi_G'(\zeta)$ для кожного вектора $h\in E_{3}$
+є узагальненням класичної похідної за напрямком.
+
+Зауважимо, що обидва означення: похідної Лорха (\ref{difLorch}) і
+похідної Гато (\ref{Gprz}), --- враховують існування необоротних
+елементів $h$ в алгебрі $\mathbb{A}$, оскільки в цих означеннях не
+використовується ділення на елементи алгебри на відміну від
+класичного означення похідної функції комплексної змінної.
+
+Очевидно, що функція $\Phi$, диференційовна за Лорхом в
+області $\Omega$, є також диференційовною за Гато і
+$\Phi_L'(\zeta)=\Phi_G'(\zeta)$ для всіх $\zeta\in\Omega$\,.
+Обернене твердження не є істинним подібно до того, як
+існування класичних похідних у точці за усіма напрямками не гарантує сильної
+диференційовності (і навіть неперервності) функції у цій точці.
+
+Для  функції
+$\Phi\colon\Omega\rightarrow\mathbb{A}$ розглянемо поняття моногенності та аналітичності.
+
+Ми говоримо, що функція  $\Phi \colon \Omega \rightarrow
+\mathbb{A}$  \textit{моногенна} в області $\Omega\subset E_{3}$,
+якщо $\Phi$ неперервна і диференційовна за Гато  в кожній точці
+області $\Omega$.
+
+Ми використовуємо поняття моногенної функції у сенсі існування для
+неї похідних чисел (див. монографії Е.~Гурса \cite{Goursat} і Ю.Ю.~Трохимчука \cite{Trokhimchuk}) у поєднанні з
+неперервністю цієї функції.
+
+У науковій літературі назва моногенна функція
+вико\-ри\-сто\-ву\-єть\-ся також для функцій, які задані у
+некомутативних алгебрах і задовольняють деякі умови, подібні до
+класичних умов Коші--Рімана (див., наприклад, роботу Дж.~Райана \cite{Ryan}). Такі
+функції називають також регулярними (див., наприклад, роботу А.~Садбері
+\cite{Sudbery}) або гіперголоморфними (див., наприклад, монографію В.В.~Кравченка і М.В.~Шапіро
+\cite{Krav-Shap}).
+
+
+Функцію $\Phi : \Omega\rightarrow \mathbb A$ називають {\it
+аналітичною\/} в області $\Omega\subset E_3$, якщо в деякому околі
+кожної точки $\zeta_0\in \Omega$ вона може бути представлена у
+вигляді суми збіжного степеневого ряду з коефіцієнтами, що
+належать алгебрі $\mathbb A$.
+
+
+Очевидно, що кожна аналітична функція $\Phi : \Omega\rightarrow \mathbb A$ є моногенною
+в області $\Omega\subset E_3$ і її похідна Гато $\Phi_G'(\zeta)$ також є моногенною в цій області.
+Далі будуть вказані достатні умови, за яких моногенна функція $\Phi : \Omega\rightarrow \mathbb A$ є аналітичною в
+області $\Omega\subset E_3$.
+
+
+
+
+%%%%%%%%%%%%%%%
+\subsection{Представлення моногенних функцій через голоморфні функції комплексних змінних}
+
+Нехай тепер $\mathbb{A}$ --- довільна $n$-вимірна комутативна
+асоціативна алгебра з одиницею над полем комплексних чисел.
+Е.~Картан у роботі \cite{Cartan} довів, що в алгебрі $\mathbb{A}$
+існує базис $\{I_k\}_{k=1}^{n}$ і існують структурні константи
+$\Upsilon_{r,k}^{s}$ такі, що виконуються наступні правила множення:
+
+1)  \,\,  $\forall\, r,s\in[1,m]\cap\mathbb{N}\,:$ \quad
+$I_rI_s=\left\{
+\begin{array}{rcl}
+0 &\mbox{при} & r\neq s, \\[1mm]
+I_r &\mbox{при} & r=s;\\
+\end{array}
+\right.$
+
+2) \,\,  $\forall\, r,s\in[m+1,n]\cap\mathbb{N}\,:$ \quad $I_rI_s=
+\sum\limits_{k=\max\{r,s\}+1}^n \Upsilon_{r,k}^{s}I_k$\,; \vskip 1mm
+
+
+3)\,\, $\forall\, s\in[m+1,n]\cap\mathbb{N} \,\,\, \exists\,!\;
+ u_s\in[1,m]\cap\mathbb{N}$ \; $\forall\,
+ r\in[1,m]\cap\mathbb{N}\,:$\\
+$$I_rI_s=\left\{
+\begin{array}{lll}
+0 & \mbox{при} &  r\neq u_s\,,\\[1mm]
+I_s & \mbox{при} &  r= u_s\,,
+\end{array}
+\right.
+$$
+де $\mathbb{N}$ --- множина натуральних чисел.  Очевидно, що перші
+$m$ базисних векторів $\{I_u\}_{u=1}^m$ є ідемпотентами і
+породжують напівпросту підалгебру $\mathcal{S}$ алгебри $\mathbb{A}$, а
+вектори $\{I_r\}_{r=m+1}^n$ породжують нільпотентну підалгебру $\mathcal{N}$
+цієї алгебри. Надалі алгебру $\mathbb{A}$ з базисом Картана
+позначатимемо $\mathbb{A}_n^m$. Одиницею алгебри $\mathbb{A}_n^m$
+є елемент $1=\sum\limits_{u=1}^mI_u$.
+
+Норма елемента $v=\sum\limits_{r=1}^nv_rI_r$ алгебри $\mathbb{A}_n^m$ визначається
+рівністю
+$$\|v\|:=\sqrt{\sum\limits_{r=1}^n|v_r|^2}.$$
+
+
+Алгебра $\mathbb{A}_n^m$ містить $m$ максимальних ідеалів
+$$\mathcal{I}_u:=\Biggr\{\sum\limits_{k=1,\,k\neq u}^n\lambda_kI_k:\lambda_k\in
+\mathbb{C}\Biggr\}, \quad  u=1,2,\ldots,m.
+$$
+
+Визначимо $m$ лінійних неперервних мультиплікативних функціоналів
+$f_u:\mathbb{A}_n^m\rightarrow\mathbb{C}$ рівностями
+$$f_u(I_u)=1,\quad f_u(\omega)=0 \qquad\forall\,
+\omega\in\mathcal{I}_u,\quad u=1,2,\ldots,m.$$
+
+Нехай
+\begin{equation}\label{e_1_e_2_e_3}
+e_1=1,\quad e_2=\sum\limits_{r=1}^na_rI_r,\quad e_3=\sum\limits_{r=1}^nb_rI_r
+\end{equation}
+при $a_r,b_r\in\mathbb{C}$ --- трійка векторів в алгебрі
+$\mathbb{A}_n^m$, які лінійно незалежні над полем
+$\mathbb{R}$.
+
+Нехай $\zeta:=xe_1+ye_2+ze_3$, де $x,y,z\in\mathbb{R}$.
+
+Очевидно, що  $\xi_u:=f_u(\zeta)=x+ya_u+zb_u$,\, $u=1,2,\ldots,m$.
+
+Накладемо наступне обмеження на вибір лінійної оболонки\, $E_3$:
+\begin{equation}\label{3-1:cond-on-E3}
+ f_u (E_3):=\{f_u(\zeta) : \zeta\in E_3\} =\mathbb{C}\,,\qquad   u=1,2,\ldots,m\,,
+\end{equation}
+тобто образом $f_u(E_3)$ множини $E_3$ при кожному відображенні $f_u$ має бути вся комплексна площина
+(див. \cite{Pukh-5}).
+Очевидно, що це має місце тоді і тільки тоді, коли при кожному
+фіксованому $u=1,2, \ldots, m$ хоча б одне з чисел $a_u$ чи $b_u$
+належить $\mathbb{C}\setminus\mathbb{R}$.
+
+
+Для області
+$\Omega\subset E_3$ через $D_u$ позначимо область комплексної
+площини, на яку $\Omega$ відображається функціоналом $f_u$.
+
+У роботі \cite{Sh-co} доведено наступне представлення резольвенти:
+\begin{equation}\label{rozkl-rezol-A_n^mR}
+(te_1-\zeta)^{-1}=\sum\limits_{u=1}^m\frac{1}{t-\xi_u}\,I_u+
+ \sum\limits_{s=m+1}^{n}\sum\limits_{k=2}^{s-m+1}\frac{Q_{k,s}}
+ {\left(t-\xi_{u_{s}}\right)^k}\,I_{s}\,
+  \end{equation}
+  $$ \forall\,t\in\mathbb{C}:\,
+t\neq \xi_u,\quad u=1,2,\ldots,m,$$ де $Q_{k,s}$ визначені такими
+рекурентними співвідношеннями:
+$$
+Q_{2,s}:=T_{s}\,,\quad
+Q_{k,s}=\sum\limits_{r=k+m-2}^{s-1}Q_{k-1,r}\,B_{r,\,s}\,,\;
+\;\;k=3,4,\ldots,s-m+1,
+$$
+при
+$T_s:=ya_s+zb_s$\,, $B_{r,s}:=\sum\limits_{k=m+1}^{s-1}T_k
+C_{r,s}^k$\,, $s=m+2,\ldots,n$,
+ а натуральні числа $u_s$  визначені у правилі множення 3 алгебри $\mathbb{A}_n^m$.
+
+Із співвідношень  (\ref{rozkl-rezol-A_n^mR}) випливає, що точки
+ $(x,y,z)\in\mathbb{R}^3$, які відповідають необоротним елементам
+ $\zeta\in\mathbb{A}_n^m$, лежать на прямих
+\begin{equation}\label{3-2:L-uR}
+ L_u:\quad\left\{
+\begin{array}{r}x+y\,{\rm Re}\,a_u+z\,{\rm Re}\,b_u=0,\vspace*{2mm} \\
+y\,{\rm Im}\,a_u+z\,{\rm Im}\,b_u=0. \\
+\end{array} \right.
+\end{equation}
+
+
+Наступна теорема містить представлення моногенних функцій, що
+приймають значення в алгебрі $\mathbb{A}_n^m$, через голоморфні
+функції комплексних змінних.
+
+\vskip 1mm
+
+\begin{theorem}[\cite{Sh-co}] \label{Shpak-costr-op} 
+Нехай виконується умова \eqref{3-1:cond-on-E3} і
+область
+$\Omega\subset E_3$ є опуклою в напрямку прямих $L_u$ при всіх
+ $u=1,2,\ldots, m$.
+Тоді кожна моногенна функція
+$\Phi:\Omega\rightarrow\mathbb{A}_n^m$ подається у вигляді
+\begin{multline}
+  \label{Teor--1RR}
+\Phi(\zeta)=\sum\limits_{u=1}^mI_u\,\frac{1}{2\pi
+i}\int\limits_{\Gamma_u} F_u(t)(t-\zeta)^{-1}\,dt+\\
++\sum\limits_{s=m+1}^nI_s\,\frac{1}{2\pi i}\int\limits_
+{\Gamma_{u_s}}G_s(t)(t-\zeta)^{-1}\,dt,
+\end{multline}
+де $F_u$ --- деяка голоморфна функція в області $D_u$ і $G_s$ ---
+ деяка голоморфна функція
+в області $D_{u_s}$, а $\Gamma_q$ --- замкнена жорданова
+спрямлювана крива, яка лежить в області $D_q$, охоплює  точку
+$\xi_q$ і не містить точок $\xi_{\ell}$\,, $\ell=1,2,\ldots,
+m$,\,$\ell\neq q$. 
+\end{theorem}
+
+\vskip 1mm
+
+
+\begin{remark}\label{3-1:Rem-int-op-sim-pe}
+Основна відмінність між інтегральним оператором (\ref{Teor--1RR})
+і головним продовженням (\ref{pr-ext}) голоморфних функцій у комутативну банахову алгебру полягає в тому, що крива
+$\Gamma_u$ не зобов'язана охоплювати всі точки спектра елемента\, $\zeta$\,.
+Тому інтегральний оператор (\ref{Teor--1RR})
+застосовний також у випадку, коли деякі точки згаданого спектра не належать області\, $D$\,.
+\end{remark}
+
+
+
+Зазначимо, що Теорему \ref{Shpak-costr-op} узагальнено в роботі \cite{Sh25} на випадок
+моногенних функцій $\Phi : \Omega\rightarrow \mathbb{A}_n^m$, заданних в області
+$\Omega\subset E_k$, де
+$E_k:=\{\zeta=\sum\limits_{j=1}^k x_{j}e_j:\,\,\,x_j\in\mathbb{R}\}$ ---
+лінійна оболонка векторів\,\, $e_1=1,e_2,\dots,e_k$\,, $2\leq k\leq 2n$\,,
+лінійно незалежних над полем\, $\mathbb{R}$.
+Отримані представлення моногенних функцій
+узагальнюють  відповідні результати робіт
+ \cite{Pl-Gr-big,Pl-Shp1,PlPu13,Pukh-5,Pl-Shp-Al} та ряд інших результатів про представлення аналітичних
+функцій в конкретних скінченновимірних комутативних алгебрах, що
+беруть свій початок від роботи Ф.~Рінглеба \cite{Ringleb}, який
+отримав аналогічне представлення аналітичних функцій бікомплексної змінної.
+
+
+Принциповими наслідками рівності (\ref{Teor--1RR}) є твердження, сформульовані в
+наступній теоремі, яка справедлива для довільної області\, $\Omega\subset E_3$\,.
+
+\begin{theorem}\label{3-1:teo_pro_naslidky2}
+Нехай виконується умова \eqref{3-1:cond-on-E3}
+і функція $\Phi : \Omega\rightarrow \mathbb{A}_n^m$ є моногенною в довільній області \, $\Omega\subset E_3$\,.
+Тоді:
+
+\emph{1)} функція $\Phi$ є диференціовною за Лорхом в області\, $\Omega$\,;
+
+\emph{2)} похідні Гато $\Phi_G^{(r)}$ є моногенними функціями в $\Omega$ для всіх\, $r$\,.
+\end{theorem}
+
+\begin{proof}
+Розглянемо довільну точку\, $\zeta_0\in\Omega$\, і кулю\, $\mho\subset\Omega$\, з центром у точці $\zeta_0$.
+
+Оскільки\, $\mho$\, --- опукла множина, то функція\, $\Phi$\, подається у вигляді (\ref{Teor--1RR}) в\, $\mho$.
+Звідси випливає, що компоненти $U_k$ розкладу
+\begin{equation}\label{3-1:rozklad-Phi-v-bazysi}
+\Phi(\zeta)=\sum_{k=1}^n U_k(x,y,z)\,I_k\,.
+ \end{equation}
+ є $\mathbb{R}$-диференційовними функціями в області\, $\mho$\,, тобто співвідношення
+\begin{multline*}
+U_k(x+\Delta x,y+\Delta y,z+\Delta z)-U_k(x,y,z)=\\[2mm]
+=\displaystyle \frac{\partial U_k(x,y,z)}{\partial x}\,\Delta x+
+\frac{\partial U_k(x,y,z)}{\partial y}\,\Delta y+ \frac{\partial
+U_k(x,y,z)}{\partial z}\,\Delta z+\\[2mm]
++\,o\left(\sqrt{(\Delta x)^2+(\Delta
+y)^2+(\Delta z)^2}\,\right),\qquad (\Delta x)^2+(\Delta
+y)^2+(\Delta z)^2\to 0\,,
+\end{multline*}
+виконуються для всіх\, $(x,y,z)\in\mho$\,.
+
+Тепер диференційовність функції $\Phi$ за Лорхом в області\, $\mho$\, встановлюється
+повністю аналогічно до диференційовності функції комплексної змінної за умови,
+що її дійсна і уявна частини є диференційовними функціями двох дійсних змінних
+(див., наприклад, М.О.~Лаврентьєв і Б.В.~Шабат \cite[с.~21]{L1}).
+
+
+Використовуючи представлення (\ref{Teor--1RR}) функції $\Phi$ в області\, $\mho$\,,
+отримуємо наступний вираз для похідної Гато порядку $r$:
+\begin{multline*}
+\Phi_G^{(r)}(\zeta)=\sum\limits_{u=1}^mI_u\,\frac{r!}{2\pi i}\int\limits_{\Gamma_u}
+F_u(t)\Big((te_1-\zeta)^{-1}\Big)^{r+1}\,dt+\\
++\sum\limits_{s=m+1}^nI_s\,\frac{r!}{2\pi i}\int\limits_
+{\Gamma_{u_s}}G_s(t)\Big((te_1-\zeta)^{-1}\Big)^{r+1}\,dt\qquad
+\forall\,\zeta\in\mho\,.
+\end{multline*}
+Більш того, ця похідна є неперервною функцією в області\, $\mho$. Отже, похідна Гато
+$\Phi_G^{(r)}$ є моногенною функцією в\, $\mho$\, для будь-якого\, $r$\,.
+
+В силу довільності вибору точки\, $\zeta_0$\, і кулі\, $\mho$\, всі твердження теореми
+справделиві в області\, $\Omega$\,.
+\end{proof}
+
+Розглянемо питання про аналоги умов Коші--Рімана як необхідних і достатніх умов моногенності
+функцій\, $\Phi : \Omega\rightarrow \mathbb{A}_n^m$\,.
+
+
+\begin{theorem}\label{3-1:teo-CR-An}
+Нехай виконується умова \eqref{3-1:cond-on-E3}.
+Для того, щоб функція $\Phi : \Omega\rightarrow \mathbb{A}_n^m$ була моногенною в області
+$\Omega\subset E_3$, необхідно і достатньо, щоб усі функції
+ $U_k:\Omega\rightarrow\mathbb{C}$ в розкладі \eqref{3-1:rozklad-Phi-v-bazysi} були $\mathbb{R}$-диференціовними в
+області $\Omega$ і в цій області виконувалися умови
+\begin{equation}\label{Umovy_K-R}
+\frac{\partial \Phi}{\partial y}=\frac{\partial \Phi}{\partial
+x}\,e_{2}\,,\qquad \frac{\partial \Phi}{\partial z}=\frac{\partial
+\Phi}{\partial x}\,e_{3}\,.
+\end{equation}
+\end{theorem}
+
+\begin{proof} {\it Необхідність.} $\mathbb{R}$-диференційовність функцій
+$U_k:\Omega\rightarrow\mathbb{C}$ в розкладі (\ref{3-1:rozklad-Phi-v-bazysi}) випливає
+з представлення (\ref{Teor--1RR}) моногенної функції $\Phi$ (див. доведення теореми \ref{3-1:teo_pro_naslidky2}).
+
+Вибираючи в рівності (\ref{Gprz}) послідовно елементи $e_{1}=1, e_{2}, e_{3}$ у якості вектора $h$,
+отримуємо рівності
+\begin{eqnarray*}
+ \frac{\partial\Phi}{\partial x}=\Phi'_G(\zeta),\qquad
+ \frac{\partial\Phi}{\partial y}=e_2\,\Phi'_G(\zeta),\qquad
+\frac{\partial\Phi}{\partial z}=e_3\,\Phi'_G(\zeta),
+\end{eqnarray*}
+наслідком яких є рівності \eqref{Umovy_K-R}.
+
+{\it Достатність} доводиться повністю аналогічно до того, як це робиться при доведенні
+відповідної теореми про диференційовність функцій комплексної змінної
+(див., наприклад, М.О.~Лаврентьєв і Б.В.~Шабат \cite[с.~21]{L1}).
+\end{proof}
+
+Отже, умови (\ref{Umovy_K-R}) за своєю природою аналогічні до класичних умов Коші--Рімана для
+голоморфних функцій комплексної змінної.
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Контурні інтегральні теореми для моногенних функцій в скінченновимірній комутативній асоціативній алгебрі}
+
+
+Розглянемо лініну оболонку $E_3:=\{\zeta=xe_1+ye_2+ze_3:\,\, x,y,z\in\mathbb{R}\}$,
+породжену векторами \eqref{e_1_e_2_e_3}.
+
+
+Визначимо криволінійний інтеграл в просторі\, $E_3$\,.
+Будемо використовувати те саме позначення\, $\gamma$\, для кривої в\, ${\mathbb R}^3$\,
+і для конгруентної кривої в\, $E_3$\,.
+
+
+Для спрямлюваної жорданової кривої $\gamma$ в $\mathbb{R}^{3}$ і
+неперервної функції $\Psi:\gamma\rightarrow\mathbb{A}_n^m$, розкладеної за базисом
+$\{I_k\}_{k=1}^n$ у вигляді
+\begin{equation}\label{3-2:Phi-form}
+\Psi(\zeta)=\sum\limits_{k=1}^{n}{U_k(x,y,z)\,I_k}+i\sum
+\limits_{k=1}^{n}{V_k(x,y,z)\,I_k},
+\end{equation}
+ де\, $(x,y,z)\in\gamma$\, і\, $U_k : \gamma\rightarrow\mathbb{R}$\,,\,\, $V_k :
+\gamma\rightarrow\mathbb{R}$\,, визначимо інтеграл  вздовж
+кривої $\gamma\subset E_3$ рівністю
+\begin{multline*}
+\int\limits_{\gamma}\Psi(\zeta)\,d\zeta:=\sum\limits_{k=1}^{n}
+I_{k}\int\limits_{\gamma}U_{k}(x,y,z)\,dx+
+\sum\limits_{k=1}^ne_{2}I_{k}\int\limits_{\gamma}U_{k}(x,y,z)\,dy+\\
++\sum\limits_{k=1}^ne_{3}I_{k}\int\limits_{\gamma}U_{k}(x,y,z)\,dz
++i\sum\limits_{k=1}^nI_{k}\int\limits_{\gamma}V_{k}(x,y,z)\,dx+\\
++i\sum\limits_{k=1}^ne_{2}I_{k}\int\limits_{\gamma}V_{k}(x,y,z)\,dy+
+i\sum\limits_{k=1}^ne_{3}I_{k}\int\limits_{\gamma}V_{k}(x,y,z)\,dz\,,
+\end{multline*}
+де\,\, $d\zeta:=e_1\,dx+e_{2}\,dy+e_{3}\,dz$\,.
+
+Визначимо також поверхневий інтеграл в просторі\, $E_3$\,.
+Ми використовуємо те саме позначення\, $\Sigma$\, для поверхні в\, ${\mathbb R}^3$\,
+і для конгруентної поверхні в\, $E_3$\,.
+
+Нехай\, $\Sigma$ --- поверхня в\, $\mathbb{R}^{3}$\, з вимірними за Жорданом
+проекціями на координатні площини. Для неперервної функції\, $\Psi : \Sigma\rightarrow \mathbb{A}_n^m$,
+розкладеної за базисом\, $\{I_k\}_{k=1}^n$\, у вигляді
+(\ref{3-2:Phi-form}), де\, $(x,y,z)\in\Sigma$\, і\, $U_k :
+\Sigma\rightarrow\mathbb{R}$\,,\,\, $V_k : \Sigma\rightarrow\mathbb{R}$\,,
+визначимо інтеграл по поверхні\, $\Sigma$\, з диференціальною формою\,\, $dx\,dy$\,\, рівністю
+\[\int\limits_{\Sigma}\Psi(\zeta)\,dx\,dy:=
+\sum\limits_{k=1}^nI_{k}\int\limits_{\Sigma}U_{k}(x,y,z)\,dx\,dy+
+i\sum\limits_{k=1}^nI_{k}\int\limits_{\Sigma}V_{k}(x,y,z)\,dx\,dy\,.\]
+Аналогічно визначаються інтеграли з диференціальними формами
+$dydz$ та $dzdx$.
+
+
+Означення криволінійного і поверхневого інтегралів від
+функції гіперкомплексної змінної коректні в тому сенсі, що їх
+значення не залежать від вибору допустимих параметризацій
+відповідно кривої чи поверхні, оскільки гіперкомплексні інтеграли
+визначаються через відповідні дійсні інтеграли.
+
+
+\subsection{Формула Стокса і теорема Коші для криволінійного інтеграла.}
+
+Наступне твердження містить аналог формули Стокса в алгебрі\, $\mathbb{A}_n^m$\,.
+
+
+\begin{theorem}\label{3-2:th-Stoksa}
+Якщо функція $\Phi:\Omega\rightarrow\mathbb{A}_n^m$ неперервна
+разом з частинними похідними першого порядку в області $\Omega\subset E_3$ і $\Sigma$ --- кусково-гладка поверхня в
+$\Omega$, край якої  $\gamma$ є кусково-гладкою жордановою кривою,
+то справедливий наступний аналог формули Стокса:
+\begin{multline*}
+\int\limits_{\gamma}\Phi(\zeta)\,d\zeta=\int\limits_{\Sigma}\left(\frac{\partial\Phi}{\partial
+x}e_{2}-\frac{\partial\Phi}{\partial y}e_1\right)dx\,dy
++\left(\frac{\partial\Phi}{\partial
+y}e_{3}-\frac{\partial\Phi}{\partial z}e_{2}\right)dy\,dz+\\
++\left(\frac{\partial\Phi}{\partial
+z}e_1-\frac{\partial\Phi}{\partial x}e_{3}\right)dz\,dx\,.
+\end{multline*}
+\end{theorem}
+
+Тепер перший крок в доведенні теореми Коші для гіпер\-комп\-лекс\-но\-го криволінійного інтеграла
+полягає у використанні неперервності
+похідної Гато моногенної функції, яку встановлено в теоремі \ref{3-1:teo_pro_naslidky2}
+за умови \eqref{3-1:cond-on-E3}, аналогів умов Коші--Рімана \eqref{Umovy_K-R} і теореми \ref{3-2:th-Stoksa}.
+В результаті отримуємо наступне твердження.
+
+
+\begin{theorem}\label{3-2:teo-int-po-kryv-z-neper-poh}
+Нехай виконується умова \eqref{3-1:cond-on-E3}. Нехай
+$\Phi : \Omega\rightarrow\mathbb{A}_n^m$ --- моногенна функція в області
+$\Omega\subset E_3$ і $\Sigma$ --- кусково-гладка поверхня в $\Omega$,
+край якої $\gamma$ є кусково-гладкою жордановою кривою.
+Тоді
+\begin{equation}\label{3-2:form-Koshi-po-kryv}
+\int\limits_{\gamma}\Phi(\zeta)\,d\zeta=0.
+\end{equation}
+\end{theorem}
+
+\begin{remark}\label{3-2:rem-th-C-M}
+Зокрема, рівність (\ref{3-2:form-Koshi-po-kryv}) виконується у випадку, коли\, $\gamma$\, --- межа
+$\partial\triangle$ будь-якого трикутника $\triangle$, що міститься в $\Omega$.
+Пояснимо, що під трикутником $\triangle$ ми розуміємо плоску фігуру, обмежену
+трьома відрізками, що з'єднують три його вершини, а
+межа $\partial\triangle$ розглядається у відносній топології площини трикутника.
+\end{remark}
+
+Другий крок в доведенні теореми Коші для гіпер\-комп\-лекс\-но\-го криволінійного інтеграла здійснюється
+у випадку, коли область $\Omega\subset E_3$ є опуклою і\, $\gamma$\, --- довільна замкнена спрямлювана жорданова
+крива в області $\Omega$. У цьому випадку рівність (\ref{3-2:form-Koshi-po-kryv}) для кожної моногенної функції
+$\Phi : \Omega\rightarrow\mathbb{A}_n^m$ може бути доведена класичним способом так, як це зробив Е.Р.~Лорх
+\cite{Lorch} в опуклій області усієї алгебри.
+
+
+
+Через $\gamma[\zeta_1,\zeta_2]$ будемо позначати дугу орієнтованої жорданової кривої $\gamma$,
+де $\zeta_{1}$ --- початок цієї дуги і $\zeta_{2}$ --- її кінець.
+
+
+Нарешті, доведемо наступний гіперкомплексний аналог інтегральної теореми Коші.
+
+
+\begin{theorem}\label{3-2:teo-int-po-kryv-Blum}
+Нехай виконується умова \eqref{3-1:cond-on-E3} і функція\, $\Phi:\Omega\rightarrow\mathbb{A}_n^m$ є моногенною
+в області $\Omega\subset E_3$. Тоді для довільної замкненої жорданової спрямлюваної кривої\, $\gamma$\,,
+яка гомотопна точці в $\Omega$, справедлива рівніcть \eqref{3-2:form-Koshi-po-kryv}.
+\end{theorem}
+
+
+\begin{proof}
+Застосуємо схему доведення теореми 3.2 з роботи Е.~Блю\-ма \cite{Blum}.
+Нехай крива $\gamma$ має параметризацію $\zeta=\phi(t)$, $0\leq
+t\leq1$, при цьому $\phi(0)=\phi(1)=\zeta_0$, і нехай $\gamma$ --- гомотопна точці $\zeta_0$.
+Тоді існує функція $H(s,t)$ двох дійсних змінних\, $s$\, і\, $t$\,, яка  неперервна на квадраті
+$Q:=[0,1]\times[0,1]$ і приймає значення в області $\Omega$, така, що
+\[H(0,t)=\phi(t),\quad H(1,t)\equiv\zeta_0\qquad\forall\,t\in[0,1],\]
+\[H(s,0)=H(s,1)=\zeta_0\qquad\forall\,s\in[0,1].\]
+
+Оскільки функція $H$ --- неперервна на компактній множині $Q$, то образ $K:=\{H(s,t) : (s,t)\in Q\}$
+є компактною множиною в $\Omega$.
+
+Позначимо\,\,\, $\rho:=\min\limits_{\zeta'\in K,\,\zeta''\in\partial\Omega}\|\zeta'-\zeta''\|$.
+
+Оскільки функція $H$ --- рівномірно неперервна на множині $Q$, то існує
+$\delta>0$ таке, що
+\begin{equation}\label{2-3:ner2per}
+\|H(s',t')-H(s,t)\|<\rho/2\quad \forall\,(s,t), (s',t') :
+|s'-s|<\delta,\,\,|t'-t|<\delta\,.
+\end{equation}
+
+Виберемо числа $0=t_0<t_1<\ldots<t_n=1$, що задовольняють нерівності $t_j-t_{j-1}<\delta$,\, $j=1,2,\ldots,n$,
+і покладемо
+$s_1=t_1$. Позначимо $\zeta_{0,j}:=H(0,t_j)$, $\zeta_{1,j}:=H(s_1,t_j)$ при $j=1,2,\ldots,n-1$\,.
+Через $L_j$ позначимо відрізок з початком у точці $\zeta_{0,j}$ і кінцем у точці $\zeta_{1,j}$.
+
+Введемо в розгляд криву $\gamma_1:=\{H(s_1,t) : 0\leq t\leq1\}$.
+Не зменшуючи загальності, можемо вважати, що крива $\gamma_1$ є спрямлюваною, оскільки, якщо це необхідно,
+$\gamma_1$ може бути замінена гомотопною їй ламаною, яка складається з відрізків, що послідовно сполучають точки
+$\zeta_0$, $\zeta_{1,1}, \zeta_{1,2},\dots, \zeta_{1,n}$\,.
+
+В силу нерівності (\ref{2-3:ner2per}) дуги $\gamma[\zeta_0,\zeta_{01}]$,
+$\gamma_1[\zeta_0,\zeta_{11}]$ і відрізок $L_1$ містяться в кулі
+$B(\zeta_0):=\{\zeta\in E_3 : \|\zeta-\zeta_0\|<\rho\}$. Оскільки $B(\zeta_0)$ --- опукла множина, що міститься в
+$\Omega$, то
+\begin{equation}\label{2-3:rivn-0K}
+\int\limits_{\gamma[\zeta_0,\zeta_{01}]}\Phi(\zeta)d\zeta+
+\int\limits_{L_1}\Phi(\zeta)d\zeta=\int\limits_{\gamma_1[\zeta_0,\zeta_{11}]}\Phi(\zeta)d\zeta.
+\end{equation}
+
+При $j=1,2,\ldots,n-2$ з нерівності (\ref{2-3:ner2per}) випливають наступні нерівності:
+\[\|\zeta-\zeta_{0,j}\|<\rho/2 \qquad \forall\,\zeta\in\gamma[\zeta_{0,j},\zeta_{0,j+1}]\,,\]
+\[\|\zeta-\zeta_{1,j}\|<\rho/2 \qquad \forall\,\zeta\in\gamma_1[\zeta_{1,j},\zeta_{1,j+1}]\,, \qquad
+\|\zeta_{1,j}-\zeta_{0,j}\|<\rho/2\,,\]
+в силу яких дуги $\gamma[\zeta_{0,j},\zeta_{0,j+1}]$, $\gamma_1[\zeta_{1,j},\zeta{1,j+1}]$ і відрізки
+$L_j$, $L_{j+1}$ містяться в кулі $B(\zeta_{0,j}):=\{\zeta\in E_3 : \|\zeta-\zeta_{0,j}\|<\rho\}$.
+Оскільки $B(\zeta_{0,j})$  --- опукла множина, що міститься в $\Omega$,
+то
+\begin{multline}\label{2-3:rivn-jK}
+-\int\limits_{L_{j}}\Phi(\zeta)d\zeta+
+\int\limits_{\gamma[\zeta_{0,j},\zeta_{0,j+1}]}\Phi(\zeta)d\zeta+\int\limits_{L_{j+1}}\Phi(\zeta)d\zeta=\\
+=\int\limits_{\gamma_1[\zeta_{1,j},\zeta_{1,j+1}]}\Phi(\zeta)d\zeta,\qquad
+j=1,2,\ldots,n-2.
+\end{multline}
+
+Нарешті, подібно до рівності (\ref{2-3:rivn-0K}) отримуємо рівність
+\begin{equation}\label{2-3:rivn-nK}
+-\int\limits_{L_{n-1}}\Phi(\zeta)d\zeta+
+\int\limits_{\gamma[\zeta_{0,n-1},\zeta_{0}]}\Phi(\zeta)d\zeta=
+\int\limits_{\gamma_1[\zeta_{1,n-1},\zeta_{0}]}\Phi(\zeta)d\zeta.
+\end{equation}
+
+Додаючи всі рівності (\ref{2-3:rivn-0K}), (\ref{2-3:rivn-jK}) і (\ref{2-3:rivn-nK}), бачимо, що знищуються
+всі інтеграли вздовж відрізків і залишається рівність
+\begin{equation}\label{2-3:rivn-int-1}
+\int\limits_{\gamma}\Phi(\zeta)d\zeta=\int\limits_{\gamma_1}\Phi(\zeta)d\zeta.
+\end{equation}
+
+Далі покладаємо $s_j=t_j$ і вводимо в розгляд криву $\gamma_j:=\{H(s_j,t) : 0\leq t\leq1\}$ при $j=2,3,\ldots,n$.
+Подібно до $\gamma_1$, не зменшуючи загальності, можемо вважати, що всі криві $\gamma_j$ є спрямлюваними.
+
+Тепер подібно до рівності (\ref{2-3:rivn-int-1}) отримуємо рівності
+\[\int\limits_{\gamma_1}\Phi(\zeta)d\zeta=\int\limits_{\gamma_2}\Phi(\zeta)d\zeta=\ldots=\int\limits_{\gamma_n}\Phi(\zeta)d\zeta.\]
+
+Таким чином, ми отримали рівність
+\[\int\limits_{\gamma}\Phi(\zeta)d\zeta=\int\limits_{\gamma_n}\Phi(\zeta)d\zeta,\]
+в якій крива $\gamma_n$ вироджується в точку, оскільки  $H(1,t)\equiv\zeta_0$.
+Отже,
+\[\int\limits_{\gamma_n}\Phi(\zeta)d\zeta=0\,,\]
+і рівність (\ref{3-2:form-Koshi-po-kryv}) доведено.
+\end{proof}
+
+
+\subsection{Теорема Морера.}
+
+Через $s[\zeta_1,\zeta_2]$ позначимо відрізок з початком $\zeta_1$ і кінцем $\zeta_2$.
+
+Справедливий наступний аналог теореми Морера для функцій зі значеннями в алгебрі $\mathbb{A}_n^m$.
+
+\begin{theorem}\label{3-2:teo_Morera}
+Якщо функція $\Phi:\Omega\rightarrow\mathbb{A}_n^m$ неперервна в області $\Omega\subset E_3$ і задовольняє рівність
+\begin{equation} \label{3-2:Morera}
+\int\limits_{\partial\triangle}\Phi(\zeta)\,d\zeta=0
+\end{equation}
+ для кожного трикутника\, $\triangle$\,, що міститься в області\, $\Omega$\,,
+ то функція\, $\Phi$\, є моногенною в області\, $\Omega$\,.
+\end{theorem}
+
+\begin{proof}
+Нехай\, $a$\, --- довільна фіксована точка в\, $\Omega$\,.
+Розглянемо функцію
+\[\Psi(\zeta):=\int\limits_{s[a,\zeta]}\Phi(\tau)\,d\tau\,.\]
+Покажемо, що функція\, $\Psi$\, є моногенною в області\, $\Omega$\, і
+\begin{equation}\label{2-3:teo-Morera-f3}
+\Psi_G'(\zeta)=\Phi(\zeta).
+\end{equation}
+
+Візьмемо $h\in E_3$ і $\delta>0$ такі, що трикутник
+$\triangle$ з вершинами $a$, $\zeta$ і $\zeta+\delta h$ міститься в\, $\Omega$\,.
+
+Використовуючи рівність (\ref{3-2:Morera}), перетворюємо різницю
+\begin{multline}\label{2-3:teo-Morera-f1}
+\Psi(\zeta+\delta h)-\Psi(\zeta)=\int\limits_{s[a, \zeta+\delta h]}\Phi(\tau)\,d\tau\,-
+\int\limits_{s[a,\zeta]}\Phi(\tau)\,d\tau=\\[1mm]
+=\int\limits_{s[a, \zeta+\delta h]}\Phi(\tau)\,d\tau\,+
+\int\limits_{s[\zeta,a]}\Phi(\tau)\,d\tau+\int\limits_{s[\zeta+\delta h,
+\zeta]}\Phi(\tau)\,d\tau\,-\int\limits_{s[\zeta+\delta h, \zeta]}\Phi(\tau)\,d\tau=\\[1mm]
+=\int\limits_{\triangle}\Phi(\tau)\,d\tau\,+\int\limits_{s[\zeta,
+\zeta+\delta h]}\Phi(\tau)\,d\tau=\int\limits_{s[\zeta,
+\zeta+\delta h]}\Phi(\tau)\,d\tau\,.
+\end{multline}
+
+Використовуючи рівність (\ref{2-3:teo-Morera-f1}), і неперервність функції
+$\Phi$ в точці $\zeta$\,, отримуємо співвідношення
+\begin{multline}\label{2-3:teo-Morera-f2}
+\Biggr\|\frac{\Psi(\zeta+\delta h)-\Psi(\zeta)}{\delta}-\Phi(\zeta)h\Biggr\|=
+\frac{1}{\delta}\,\Biggr\|\,\,\int\limits_{s[\zeta,\zeta+\delta h]}\Phi(\tau)\,d\tau-\Phi(\zeta) \delta h\Biggr\|=\\[1.5mm]
+=\frac{1}{\delta}\,\Biggr\|\,\,\int\limits_{s[\zeta,
+\zeta+\delta
+h]}\Big(\Phi(\tau)-\Phi(\zeta)\Big)\,d\tau\Biggr\|\leq\frac{M}{\delta}\,\,\int\limits_{s[\zeta,
+\zeta+\delta h]}\|\Phi(\tau)-\Phi(\zeta)\|\,\|d\tau\|\le\\[1.5mm]
+\leq\frac{M}{\delta}\,\,\sup\limits_{\tau\in s[\zeta,\zeta+\delta h]}\,\|\Phi(\tau)-\Phi(\zeta)\,\,\|\int\limits_{s[\zeta,
+\zeta+\delta h]}\,\|d\tau\|\leq\\[1.5mm]
+\leq M\,\|h\|\,\,\sup\limits_{\tau\in s[\zeta,\zeta+\delta h]}\,\|\Phi(\tau)-\Phi(\zeta)\|\rightarrow 0\,,\qquad
+\delta\rightarrow 0\,,
+\end{multline}
+де\, $M$ --- деяка абсолютна стала.
+
+Зі співвідношення (\ref{2-3:teo-Morera-f2}) випливає рівність
+\[\lim\limits_{\delta\rightarrow0+0}\frac{\Psi(\zeta+\delta h)-\Psi(\zeta)}{\delta}=\Phi(\zeta)h,\]
+наслідком якої є рівність (\ref{2-3:teo-Morera-f3}).
+
+Оскільки в довільному околі точки $\zeta$ функція $\Phi$ є похідною Гато моногенної функції
+$\Psi : \Omega\rightarrow\mathbb{A}_{3}$, то в силу теореми \ref{3-1:teo_pro_naslidky2} $\Phi$
+є моногенною функцією в області $\Omega$.
+\end{proof}
+
+
+
+
+%%%%
+\subsection{Інтегральна формула Коші}
+
+Ми використовуємо те саме позначення $L_u$ для множини в $E_3$, що є
+конгруентною до прямої (\ref{3-2:L-uR}) в $\mathbb{R}^{3}$.
+
+Нехай $\zeta_0:=x_0e_1+y_0e_2+z_0e_3$ --- довільна точка області
+$\Omega\subset E_3$. В околі точки $\zeta_0$, який міститься
+в $\Omega$, візьмемо коло $C(\zeta_0)$ з центром в точці
+ $\zeta_0$. Через $C_u$ позначимо образ кола $C(\zeta_0)$ при відображенні $f_u$,
+$u=1,2,\ldots,m$. Припустимо, що коло $C(\zeta_0)$
+\emph{охоплює множину} (див. \cite{Pukh-5})
+\begin{equation}\label{3-2:L-zeta_0}
+\Big\{\zeta_0+\zeta: \zeta\in\bigcup\limits_{u=1}^m L_u\Big\}.
+\end{equation}
+ Це означає, що крива
+$C_u$ обмежує область $D_u'$ таку, що
+$f_u(\zeta_0)\in D_u'$ при\, $u=1,2,\ldots,m$.
+
+Скажемо, що крива\, $\gamma\subset\Omega$\, \emph{один раз
+охоплює множину} \eqref{3-2:L-zeta_0} (див. \cite{Pukh-5}), якщо існує коло $C(\zeta_0)$, яке охоплює
+вказану множину і гомотопне кривій  $\gamma$ в області
+$\Omega\setminus\Big\{\zeta_0+\zeta: \zeta\in\bigcup\limits_{u=1}^m
+L_u\Big\}$.
+
+
+Візьмемо коло\, $C(0)$\, з центром в точці\, $0$\,, яке міститься в\, $E_3$\, і охоплює
+множину\, $\bigcup\limits_{u=1}^m L_u$\,.
+Оскільки функція\, $\zeta^{-1}$\, --- неперервна на кривій\,
+$C(0)$\,, то існує інтеграл
+\begin{equation}\label{3-2:lambda}
+\lambda:=\int\limits_{C(0)}\tau^{-1}\,d\tau\,.
+\end{equation}
+В силу теореми \ref{3-2:teo-int-po-kryv-Blum}, значення інтеграла \eqref{3-2:lambda} не залежить від вибору
+кола\, $C(0)$\,, яке охоплює множину\, $\bigcup\limits_{u=1}^m L_u$\,.
+
+
+Наступне твердження містить аналог інтегральної формули Коші для моногенних функцій\,
+$\Phi:\Omega\rightarrow\mathbb{A}_{n}^m$\,, заданних в області\, $\Omega\subset E_3$\,.
+
+\vskip 1mm
+
+\begin{theorem}\label{teo-formula-Koshi-3-2}
+Нехай виконується умова \eqref{3-1:cond-on-E3} і функція\, $\Phi:\Omega\rightarrow\mathbb{A}_n^m$ є моногенною
+в області $\Omega\subset E_3$. Тоді для кожної точки\, $\zeta_{0}\in\Omega$\,
+виконується наступна рівність:
+\begin{equation}\label{3-2:form-Koshi-3-2}
+\lambda\,\Phi(\zeta_{0})=
+\int\limits_{\gamma}\Phi(\zeta)\left(\zeta-\zeta_{0}\right)^{-1}\,d\zeta\,,
+\end{equation}
+де $\gamma$ --- довільна замкнена жорданова спрямлювана крива в\, $\Omega$\,,
+яка охоплює один раз множину \eqref{3-2:L-zeta_0}.
+\end{theorem}
+
+\begin{proof} 
+Для довільного\, $\varepsilon\in(0,1)$\, розглянемо коло
+\[C(\zeta_0,\varepsilon):=\{\zeta_0+\varepsilon(\zeta-\zeta_0)\, : \, \zeta\in C(\zeta_0)\}\,,\]
+де $C(\zeta_0)$ --- коло, існування якого випливає з того, що крива  $\gamma$
+охоплює один раз множину \eqref{3-2:L-zeta_0}.
+
+Оскільки $\gamma$ гомотопна колу $C(\zeta_0,\varepsilon)$ в області\,
+$\Omega\setminus\big\{\zeta_0+\zeta: \zeta\in\bigcup\limits_{u=1}^m L_u\big\}$\,, то
+з використанням теореми \ref{3-2:teo-int-po-kryv-Blum} отримуємо рівність
+   \begin{equation}\label{3-2:form-Koshi-}
+\int\limits_{\gamma}\Phi(\zeta)\left(\zeta-\zeta_{0}\right)^{-1}\,d\zeta=
+\int\limits_{C(\zeta_0,\varepsilon)}\Phi(\zeta)\left(\zeta-\zeta_{0}\right)^{-1}\,d\zeta\,.
+\end{equation}
+
+Далі, представляючи інтеграл в правій частині рівності
+(\ref{3-2:form-Koshi-}) у вигляді суми двох інтегралів, отримуємо
+\begin{multline}\label{3-2:form-Koshi-sum-int}
+\int\limits_{\gamma}\Phi(\zeta)\left(\zeta-\zeta_{0}\right)^{-1}\,d\zeta=
+\int\limits_{C(\zeta_0,\varepsilon)}(\Phi(\zeta)-\Phi(\zeta_{0}))\left(\zeta-\zeta_{0}\right)^{-1}\,d\zeta+\\
++\Phi(\zeta_{0})\int\limits_{C(\zeta_0,\varepsilon)}\left(\zeta-\zeta_{0}\right)^{-1}\,d\zeta=
+:J_{1}+J_{2}\,.
+\end{multline}
+Тут\, $J_{2}=\lambda\,\Phi(\zeta_{0})$\, в силу рівності \eqref{3-2:lambda} при\, $\tau=\zeta-\zeta_0$\,.
+
+Підінтегральна функція в інтегралі\, $J_1$\, обмежена константою, яка
+не залежить від\, $\varepsilon$. Дійсно, в силу теореми \ref{3-1:teo_pro_naslidky2}
+функція\, $\Phi$\, диференційовна за Лорхом в області\, $\Omega$\,
+і похідна\, $\Phi_L'=\Phi_G'$\, неперервна в\, $\Omega$\,.
+Тому зі співвідношення (\ref{difLorch}) випливає нерівність
+\[\|\Phi(\zeta)-\Phi(\zeta_{0})\|\le \,c\varepsilon \qquad \forall\,\zeta\in C(\zeta_0,\varepsilon)\,,\]
+де стала\, $c$\, не залежить від\, $\varepsilon$.
+Крім того, функція\, $(\zeta-\zeta_{0})^{-1}$\,, яка є неперервною на\, $C(\zeta_0)$\,, є також обмеженою
+на\, $C(\zeta_0)$\,. В результаті ми отримуємо оцінку
+\[\|(\zeta-\zeta_{0})^{-1}\|\le \, \varepsilon^{-1}\, \max_{\tau\in C(\zeta_0)}\, \|(\tau-\zeta_{0})^{-1}\|
+  \le\, c\varepsilon^{-1}  \qquad \forall\,\zeta\in C(\zeta_0,\varepsilon)\,,\]
+де стала\, $c$\, не залежить від\, $\varepsilon$. З отриманих оцінок випливає, що функція
+$(\Phi(\zeta)-\Phi(\zeta_{0}))(\zeta-\zeta_{0})^{-1}$ обмежена на колі\, $C(\zeta_0,\varepsilon)$\,
+константою, яка не залежить від\, $\varepsilon$\,.
+Отже, інтеграл\, $J_1$\, прямує до нуля, коли $\varepsilon\rightarrow0$.
+
+Нарешті, переходячи до границі в рівності (\ref{3-2:form-Koshi-sum-int}) при\,
+$\varepsilon\rightarrow 0$\,, отримуємо рівність \eqref{3-2:form-Koshi-3-2}\,.
+\end{proof}
+
+
+
+\vskip 1mm
+
+
+На відміну від подібних результатів Е.~Лорха \cite{Lorch} і
+Е.~Блюма \cite{Blum}, функція
+$\Phi:\Omega\rightarrow\mathbb{A}_n^m$ в теоремі \ref{teo-formula-Koshi-3-2}
+задана тільки в області
+$\Omega$ підпростору $E_{3}$, а не в області з усієї алгебри.
+Більш того, зауважимо, що інтегральна формула Коші, встановлена у роботах
+\cite{Lorch,Blum}, не застосовна до моногенної функції
+$\Phi : \Omega\rightarrow\mathbb {A}_n^m$, оскільки в ній інтегрування здійснюється
+вздовж кривої, на якій функція $\Phi$, взагалі кажучи, не визначена.
+
+
+\vskip 1mm
+
+
+
+\begin{theorem}\label{3-2:teo-pro-obr-lambda}
+ Стала\, $\lambda$\,, визначена рівністю \eqref{3-2:lambda}, є оборотним елементом в алгебрі\, $\mathbb{A}_n^m$\,.
+\end{theorem}
+
+\begin{proof} 
+З розкладу (\ref{rozkl-rezol-A_n^mR}) випливає рівність
+\begin{equation}\label{3-2:obr-elem}
+\zeta^{-1}=\sum\limits_{k=1}^n\widetilde{A}_k\,I_k
+\end{equation}
+з коефіцієнтами\, $\widetilde{A}_k$\,, що визначаються рівностями
+\begin{equation}\label{3-2:A__p}
+\begin{array}{ll}
+\displaystyle \widetilde{A}_u=\frac{1}{\xi_u}\,,& \qquad u=1,2,\ldots,m\,,\\[4mm]
+ \displaystyle
+\widetilde{A}_s=\sum\limits_{k=2}^{s-m+1}\frac{\widetilde{Q}_{k,s}}{\xi_{u_s}^k}\,,& \qquad
+s=m+1,m+2,\ldots,n\,,
+\end{array}
+\end{equation}
+в яких\, $\widetilde{Q}_{k,s}$\, визначаються рекурентними співвідношеннями:
+\begin{multline}\label{3-2:lem_3_2--}
+\widetilde{Q}_{2,s}:=-T_{s}\,, \\
+\widetilde{Q}_{k,s}=-\sum\limits_{r=k+m-2}^{s-1}\widetilde{Q}_{k-1,r}\,B_{r,\,s}\,,\; \;\;k=3,4,\ldots,s-m+1\,,
+\end{multline}
+де
+\begin{equation}\label{3-2:lem_1_T_p}
+T_s:=ya_s+zb_s\,,\qquad s=m+1,m+2,\ldots,n,
+\end{equation}
+\begin{equation}\label{3-2:lem_1_B_p}
+B_{r,s}:=\sum\limits_{p=m+1}^{s-1}T_p \Upsilon_{r,s}^p\,,\qquad s=m+2,m+3,\ldots,n\,,
+\end{equation}
+а структурні сталі\, $\Upsilon_{r,s}^p$\, і натуральні числа $u_s$ визначені відповідно
+в правилах множення 2 і 3 алгебри\, $\mathbb{A}_n^m$\,.
+
+
+Враховуючи рівність (\ref{3-2:obr-elem}) і співвідношення
+\begin{multline*}
+d\zeta=dx\,e_1+dy\,e_2+dz\,e_3=\sum\limits_{u=1}^m\Big(dx+a_u\,dy+b_u\,dz\Big)I_u+\\
++\sum\limits_{r=m+1}^n\Big(a_r\,dy+b_r\,dz\Big)I_r
+=\sum\limits_{u=1}^md\xi_u\,I_u+\sum\limits_{r=m+1}^n dT_r\,I_r\,,
+\end{multline*}
+отримуємо наступну рівність:
+\begin{multline}\label{3-2:obr-elem-0}
+\zeta^{-1}\,d\zeta=\sum\limits_{u=1}^m\widetilde{A}_u\,d\xi_u\,I_u+
+\sum\limits_{r=m+1}^n\widetilde{A}_{u_r}\,dT_r\,I_r+\\
++\sum\limits_{s=m+1}^n\widetilde{A}_{s}\,d\xi_{u_s}\,I_s+
+\sum\limits_{s=m+1}^n\sum\limits_{r=m+1}^n\widetilde{A}_{s}\,dT_r\,I_sI_r=:
+\sum\limits_{k=1}^n\sigma_k\,I_k\,.
+\end{multline}
+
+Тепер, враховуючи рівності (\ref{3-2:obr-elem-0}) і (\ref{3-2:A__p}), обчислюємо
+$$\int\limits_{C(0)}\sum\limits_{u=1}^m\sigma_u\,I_u=
+\sum\limits_{u=1}^mI_u\int\limits_{C_u(0)}\frac{d\xi_u}{\xi_u}=
+2\pi i\sum\limits_{u=1}^mI_u=2\pi i\,,
+$$
+де\, $C_u(0)$\, --- образ кола\, $C(0)$\, при відображенні\, $f_u$\,.
+
+Тому
+\begin{equation*}
+\lambda=2\pi
+i+\sum\limits_{k=m+1}^nI_k\int\limits_{C(0)}\sigma_k\,,
+\end{equation*}
+і\, $\lambda$\, є оборотним елементом.
+\end{proof}
+
+\vskip 1mm
+
+Отже, інтегальна формула Коші (\ref{3-2:form-Koshi-3-2}) може бути переписана у вигляді
+\begin{equation}\label{3-2:form-Koshi-3-2-ober-lambda}
+\Phi(\zeta_{0})=
+\lambda^{-1}\int\limits_{\gamma_{\zeta}}\Phi(\zeta)\left(\zeta-\zeta_{0}\right)^{-1}d\zeta\,.
+\end{equation}
+
+В деяких спеціальних випадках (див. \cite{Pl-Shp3,Pl-Shp-Al,Pukh-5}) встановлено,
+що
+\begin{equation}\label{3-2:lambda-}
+\lambda=2\pi i\,,
+\end{equation}
+як і в комплексній площині.
+
+Очевидно, що рівність (\ref{3-2:lambda-}) виконується тоді і тільки тоді, коли
+\begin{equation}\label{3-2:obr-elem-1}
+\int\limits_{C(0)}\sigma_k=0\qquad \forall\;k=m+1,\ldots,n\,,
+\end{equation}
+але умови \eqref{3-2:obr-elem-1} важко перевірити в загальному випадку.
+
+
+Вкажемо один спеціальний випадок, коли умови \eqref{3-2:obr-elem-1} легко перевіряются і
+рівність (\ref{3-2:lambda-}) виконується.
+Використаємо представлення алгебри\, $\mathbb{A}_n^m$\, у вигляді напівпрямої суми\,
+$\mathbb{A}_n^m=\mathcal{S}\oplus_s \mathcal{N}$\,, де\, $\mathcal{S}$ --- $m$-вимірна напівпроста підалгебра
+і\, $\mathcal{N}$ --- $(n-m)$-вимірна нільпотентна підалгебра.
+
+
+\vskip 1mm
+
+\begin{theorem}\label{3-2:teo-pro-napivprostu-alg-}
+Нехай $\mathbb{A}_n^m=\mathcal{S}\oplus_s \mathcal{N}$ і $E_3\subset \mathcal{S}$.
+Тоді виконується рівність \eqref{3-2:lambda-}.
+ \end{theorem}
+
+\begin{proof} 
+З умови\, $E_3\subset \mathcal{S}$\, випливає, що\, $a_k=b_k=0$\, для всіх\, $k=m+1,\ldots,n$\,
+в розкладі (\ref{e_1_e_2_e_3}).
+Тому для довільного\, $\zeta\in E_3$\,, усі функції\, $T_s$\, і\, $B_{r,s}$\, рівні нулю
+у співвідношеннях \eqref{3-2:lem_1_T_p} і \eqref{3-2:lem_1_B_p}.
+
+Тепер, враховуючи співвідношення (\ref{3-2:lem_3_2--}), робимо висновок про те, що в рівностях (\ref{3-2:A__p}),
+$\widetilde{A}_s=0$\, при\, $s=m+1,\ldots,n$\,. Звідси миттєво випливають рівності\,
+$\sigma_k=0$\, при\, $k=m+1,\ldots,n$\, і усіх\, $\zeta\in E_3$\,.
+Отже, умови \eqref{3-2:obr-elem-1} задовольняються і рівність (\ref{3-2:lambda-}) виконується.
+\end{proof}
+
+\vskip 1mm
+
+Зазначимо, що у випадку тривимірної лінійної оболонки\, $E_3$\,
+теорема \ref{3-2:teo-pro-napivprostu-alg-} узагальнює теорему 6
+роботи \cite{Pukh-5}, доведену для напівпростих алгебр, на алгебри\, $\mathbb{A}_n^m$\,, які, взагалі кажучи,
+не є напівпростими.
+
+
+Якщо крива інтерування в рівності \eqref{3-2:lambda} не охоплює множину\, $\bigcup\limits_{u=1}^m L_u$\,,
+то інтеграл в \eqref{3-2:lambda} може бути необоротним елементом алгебри\, $\mathbb{A}_n^m$\,.
+Це підтверджує наступний приклад.
+
+\begin{example}\label{3-2:ex-ne2pi}
+Розглянемо алгебру\, ${\mathbb A_2}$\, (див. \cite{PlPu13}) з базисом $\{\mathcal{I}_1,
+\mathcal{I}_2, \rho\}$ і таблицею множення:
+\[\mathcal{I}_1^2=\mathcal{I}_1,\,\,
+\mathcal{I}_2^2=\mathcal{I}_2,\,\,
+\mathcal{I}_1\mathcal{I}_2=0,\,\, \rho^2=0,\,\,
+\mathcal{I}_1\rho=0,\,\, \mathcal{I}_2\rho=\rho\,.\]
+Тут базис складається з двох ідемпотентних елементів\, $I_1=\mathcal{I}_1$\,, $I_2=\mathcal{I}_2$\, і нільпотентного
+елемента\, $I_3=\rho$\,, тобто\, $n=3$\, і\, $m=2$\,.
+
+Розглянемо інший базис в алгебрі\, ${\mathbb A_2}$:
+$$e_1=1=\mathcal{I}_1+\mathcal{I}_2, \quad e_2=i\mathcal{I}_1+\rho,\quad e_3=i\mathcal{I}_2\,.$$
+
+Для\, $\zeta=xe_1+ye_2+ze_3$\, маємо
+$$\xi_1=x+iy\, \quad \mbox{і} \quad   \xi_2=\xi_{u_3}=x+iz\,.$$
+
+Обернений елемент (\ref{3-2:obr-elem}) має вигляд
+$$\zeta^{-1}=\frac{1}{\xi_1}\,\mathcal{I}_1+\frac{1}{\xi_2}\,\mathcal{I}_2-\frac{y}{\xi_2^2}\,\rho\,,$$
+так що всі необоротні елементи\, $\zeta\in E_3$ розміщуються на двох координатних прямих\,
+$L_1=\{ze_3 : z\in\mathbb{R}\}$\, і\, $L_2=\{ye_2 : y\in\mathbb{R}\}$\,.
+
+
+Візьмемо коло
+\[C^{y,R}:=\{\tau=xe_1+e_2+ze_3 : x^2+z^2=R^2\}\,,\]
+яке охоплює пряму\, $L_2$\,, але не охоплює пряму\, $L_1$\,.
+
+Для $\zeta\in C^{y,R}$ маємо
+$$d\zeta=dx\,e_1+dz\,e_3=dx\,\mathcal{I}_1+d\xi_2\,\mathcal{I}_2\,,$$
+і
+\begin{multline*}
+\zeta^{-1}\,d\zeta=\biggl(\frac{1}{x+i}\,\mathcal{I}_1+\frac{1}{\xi_2}\,\mathcal{I}_2-\frac{1}{\xi_2^2}\,\rho\biggr) 
+(dx\,\mathcal{I}_1+d\xi_2\,\mathcal{I}_2)=\\
+=\frac{dx}{x+i}\,\mathcal{I}_1+\frac{d\xi_2}{\xi_2}\,\mathcal{I}_2-\frac{d\xi_2}{\xi_2^2}\,\rho\,.
+\end{multline*}
+
+Легко обчислюється інтеграл
+$$\int\limits_{C^{y,R}}\zeta^{-1}\,d\zeta= 2\pi i\,\mathcal{I}_2\,,$$
+тобто цей інтеграл є необоротним елементом алгебри\, $\mathbb{A}_n^m$\,.
+\end{example}
+
+
+
+\subsection{Теорема Тейлора}
+
+Виконуючи розклад функції (\ref{3-2:form-Koshi-3-2-ober-lambda}) у степеневий ряд подібно
+до розкладу голоморфних функцій, що базується на розкладі в степеневий ряд ядра Коші
+(див., наприклад, О.І.~Маркушевич \cite[с.~298]{Markush-v1}), отримуємо наступне твердження.
+
+
+\begin{theorem}\label{3-2:teo-Taylor-An}
+Нехай виконується умова \eqref{3-1:cond-on-E3} і функція\, $\Phi:\Omega\rightarrow\mathbb{A}_n^m$ є моногенною
+в області $\Omega\subset E_3$. Тоді\, $\Phi$\, є аналітичною в області\, $\Omega$\,,
+тобто в деякому околі кожної точки\, $\zeta_0\in\Omega$\, вона може бути пред\-став\-ле\-на у вигляді
+суми збіжного степеневого ряду
+\begin{equation}
+\label{3-2:st-riad}
+ \Phi(\zeta)=\sum\limits_{k=0}^{\infty} c_k \  (\zeta-\zeta_0)^k,
+\end{equation}
+де
+\[c_n=\frac{\Phi_G^{(n)}(\zeta_0)}{n!}=\lambda^{-1}
+\int\limits_{\gamma}\Phi(\tau)\Bigl((\tau-\zeta_0)^{-1}\Bigr)^{n+1}\,d\tau\,,\quad n=0,1,\dots,\]
+і $\gamma$ --- довільна замкнена жорданова спрямлювана крива в\, $\Omega$\,,
+яка охоплює один раз множину \eqref{3-2:L-zeta_0}.
+\end{theorem}
+
+
+\subsection{Еквівалентні означення моногенних функцій.}
+
+
+Наступна теорема, що містить різні еквівалентні означення моногенної функції,
+є аналогом класичної теореми комплексного аналізу про різні еквівалентні означення голоморфних функцій.
+
+\vskip 1mm
+
+
+\begin{theorem} \label{3-2:eqv-opr-mon-fun}
+Нехай виконується умова \eqref{3-1:cond-on-E3}.
+Функція\,\, $\Phi : \Omega\rightarrow\mathbb{A}_n^m$\,\,  є моногенною в
+довільній області\,\, $\Omega\subset E_3$\, тоді і тільки тоді, коли
+виконується одна з наступних умов:
+
+\emph{(I)} усі компоненти $U_k:\Omega\rightarrow\mathbb{C}$ розкладу \eqref{3-1:rozklad-Phi-v-bazysi}
+є $\mathbb{R}$-диференційовними функціями в області $\Omega$ і в цій області виконуються умови
+\eqref{Umovy_K-R};
+
+\emph{(II)} функція $\Phi$ є аналітичною в області\,
+$\Omega$\,, тобто
+для кожної точки $\zeta_0\in \Omega$ існує окіл, в якому функція
+$\Phi$ представляється   у вигляді суми збіжного степеневого ряду \eqref{3-2:st-riad}
+з коефіцієнтами\, $c_k$\,,  що належать алгебрі\,
+$\mathbb{A}_n^m$\,;
+
+\emph{(III)} функція  $\Phi$ неперервна в області $\Omega$ і
+виконується рівність \eqref{3-2:Morera}
+для кожного трикутника $\triangle$, що міститься в області $\Omega$;
+
+
+\emph{(IV)} Функція $\Phi$ є диференційовною за Лорхом в області\, $\Omega$\,;
+
+\emph{(V)} в кожній кулі\, $\mho\subset\Omega$\,
+існують\, $m$\, голоморфних функцій\, $F_u$\, в областях\, $D_u:=\{f_u(\zeta) : \zeta\in\mho\}$\,, $u=1,2,\dots,m$\,,
+і\, $n-m$\, голоморфних функцій\, $G_s$\, в областях\, $D_{u_s}$\,, $s=m+1,m+2,\dots,n$\,, таких,
+що функція $\Phi$ представляється у вигляді \eqref{Teor--1RR},
+де\, $\Gamma_u$ --- замкнена жорданова спрямлювана крива, яка лежить в області $D_u$, охоплює  точку\,
+$f_u(\zeta)$\, і не містить точок\, $f_q(\zeta)$\,, $q=1,2,\ldots, m$,\, $q\neq u$.
+\end{theorem}
+
+\begin{proof} 
+Еквівалентність умови (I) і моногенності функції $\Phi$ доведено в теоремі \ref{3-1:teo-CR-An}.
+Еквівалентність умови (II) і моногенності функції $\Phi$ є наслідком теореми
+\ref{3-2:teo-Taylor-An} і властивості збіжного степеневого ряду
+(\ref{3-2:st-riad}) визначати моногенну функцію в області збіжності.
+Еквівалентність умови (III) і моногенності функції $\Phi$ випливає з теорем
+\ref{3-2:teo-int-po-kryv-Blum} і \ref{3-2:teo_Morera}. Еквівалентність умови (IV) і моногенності функції
+$\Phi$ випливає з першого твердження теореми \ref{3-1:teo_pro_naslidky2}. Нарешті,
+еквівалентність умови (V) і моногенності функції $\Phi$ випливає з теореми
+\ref{Shpak-costr-op}.
+\end{proof}
+
+
+Теорема \ref{3-2:eqv-opr-mon-fun} узагальнює результати робіт
+\cite{Pl-Shp1,Pl-Shp2,Pl-Shp3,Plaksa12,PlPu13,Pl-Shp-Al,Pukh-5},
+встановлені для моногенних функцій в конкретних скінченновимірних алгебрах.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Теорема Коші для поверхневого інтеграла в скінченновимірній комутативній асоціативній алгебрі}
+
+
+Інтегральна теорема Коші є фундаментальним результатом класичного
+комплексного аналізу в комплексній площині $\mathbb{C}$:
+якщо межа $\partial D$ області $D\subset\mathbb{C}$ є замкненою спрямлюваною жордановою кривою
+і функція $F\colon \overline{D}\longrightarrow \mathbb{C}$ --- неперервна в замиканні $\overline{D}$ області $D$ 
+і голоморфна в $D$, то
+$$\int\limits_{\partial D}F(z)dz=0\,.$$
+
+
+Розвиток гіперкомплексного аналізу як в комутативних, так і
+некомутативних алгебрах потребує аналогічних загальних аналогів
+інтегральної теореми Коші для багатовимірних просторів.
+
+
+Добре відомо, що у випадку, коли однозв'язна область
+має замкнену кусково-гладку межу, просторові аналоги інтегральної теореми Коші
+можна отримати за допомогою класичної формули Гаусса--Остроградського  за умови,
+що задана функція має неперервні частинні похідні першого порядку, які неперервно продовжуються на
+межу області. У такий спосіб аналоги інтегральної теореми Коші
+доведено в алгебрі кватерніонів (див., наприклад, монографію В.В.~Кравченка і М.В.~Шапіро
+\cite[с.~66]{Krav-Shap}) і в алгебрах Кліффорда (див., наприклад, монографію
+Ф.~Брекса, Р.~Деланга і Ф.~Соммена \cite[с.~52]{Brakx}).
+
+Узагальнення інтегральної теореми Коші полягають у
+послабленні вимог до межі або до заданої функції.
+Як правило, такі узагальнення базуються на узагальненій Гаусса--Остроградського--Гріна--Стокса
+формулі (див., наприклад,  Г.~Федерер \cite{Federer-3-3} або Дж.~Харрісон і А.~Нортон \cite{Harrison-Norton-3-3}) 
+за умови неперервності частинних похідних заданої функції, але для розширених класів поверхонь інтегрування; див.,
+наприклад,, Р.~Абреу Блайя і Х.~Борі Рейєс \cite{Abreu-Bory-99-3-3}, а також
+Р.~Абреу Блайя, Д.~Пена Пена і Х.~Борі Рейєс
+\cite{Abreu-Bory-Pena-3-3}, де розглядаються спрямлювані або регулярні поверхні. 
+В роботах А.~Садбері \cite{Sudbery} і О.Ф.~Геруса \cite{Gerus-2011}, 
+неперервність частинних похідних замінено диференційовністю компонент
+заданої функції, що приймає значення в алгебрі кватерніонів. Зазначимо, що в роботі \cite{Gerus-2011}
+межа області залишається кусково-гладкою.
+
+
+Далі ми доведемо аналог інтегральної теореми Коші для поверхневого інтеграла від гіперголоморфної
+функції, що задана в області тривимірного простору і
+приймає значення в довільній $n$-вимірній комутативній асоціативній алгебрі, де\, $3\leq n<\infty$\,. 
+Зазначимо, що моногенні функції в гармонічних алгебрах утворюють підмножину гіперголоморфних функцій, які, крім того,
+можуть бути заданими в областях, межі яких не є кусково-гладкими.
+
+Аналогічний результат опубліковано в роботі \cite{Pla-Shp-CVEE-2014} для гіперголоморфних функцій за умови,
+що задана комутативна алгебра розглядається над полем комплексних чисел. Проте, як випливає з наведеного далі доведення, 
+така умова є неістотною. Зазначимо також, що подібний аналог інтегральної теореми Коші доведено 
+О.Ф.~Герусом \cite{Gerus-2018} 
+для гіперголоморфних функцій, що приймають значення в некомутативній алгебрі кватерніонів.
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%
+\subsection{Поверхневі інтеграли по  квадровних поверхнях}
+
+
+Роз\-гля\-не\-мо поняття квадровної поверхні в $\mathbb{R}^{3}$.
+
+Множина $\Sigma$ називається \textit{поверхнею} у просторі
+$\mathbb{R}^{3}$, якщо $\Sigma$ є гомеоморфним образом квадрата
+$G:=[0,1]\times [0,1]$ (див., наприклад, \cite[c.~24]{Rado}).
+
+Через $\Sigma^\varepsilon$ позначимо
+$\varepsilon$-окіл поверхні $\Sigma$, тобто
+множину 
+\begin{multline*}
+\Sigma^\varepsilon:=\{(x,y,z)\in\mathbb{R}^3:
+\sqrt{(x-x_1)^2+(y-y_1)^2+(z-z_1)^2}\leq\varepsilon,\\
+ \quad (x_1,y_1,z_1)\in \Sigma\}.
+\end{multline*} 
+
+\textit{Відстанню Фреше} $d(\Sigma,\Lambda)$ між поверхнями $\Sigma$
+і $\Lambda$ називається інфімум дійсних чисел $\varepsilon$, для
+яких виконуються співвідношення $\Sigma\subset \Lambda^\varepsilon$,
+$\Lambda\subset \Sigma^\varepsilon$ (див., наприклад,
+\cite{Freshe}). Послідовність багатогранників  $\Lambda_n$
+називається \textit{рівномірно збіжною} до поверхні $\Sigma$, якщо
+$d(\Lambda_n,\Sigma)\rightarrow0$ при $n\rightarrow\infty$ (див.,
+наприклад, \cite[c. 121]{Rado}).
+
+\textit{Площею Лебега} поверхні $\Sigma$ називається величина
+$$\mathfrak{L}(\Sigma):=\inf\liminf\limits_{n\rightarrow\infty}
+\mathfrak{L}(\Lambda_n),$$ де інфімум береться по усіх
+послідовностях $\Lambda_n$, рівномірно збіжних до $\Sigma$ (див.,
+наприклад, \cite[c. 468]{Rado}), а $\mathfrak{L}(\Lambda_n)$ ---
+площа багатогранника $\Lambda_n$.
+
+
+Нехай поверхня $\Sigma$ має скінченну площу Лебега. Тоді за
+теоремою Л.~Чезарі \cite[с.~7]{Cesari}
+ існує параметризація поверхні
+$$
+\Sigma=\left\{f(u,v):=\big(x(u,v),\,y(u,v),\,z(u,v)\big):(u,v)\in
+G\right\}
+$$
+така, що якобіани
+\begin{equation}\label{Jacobiany}
+A:=\frac{\partial y}{\partial u}\frac{\partial z}{\partial
+v}-\frac{\partial y}{\partial v}\frac{\partial z}{\partial u},
+\quad B:=\frac{\partial z}{\partial u}\frac{\partial x}{\partial
+v}-\frac{\partial z}{\partial v}\frac{\partial x}{\partial
+u},\quad C:=\frac{\partial x}{\partial u}\frac{\partial
+y}{\partial v}-\frac{\partial
+x}{\partial v}\frac{\partial y}{\partial u} 
+\end{equation}
+існують майже всюди на квадраті $G:=[0;1]\times [0;1]$ і
+\begin{equation}\label{riv-pl-leb}
+\mathfrak{L}(\Sigma)=\int\limits_{G}\sqrt{A^2+B^2+C^2}\,dudv.
+\end{equation}
+
+У випадку, коли $\mathfrak{L}(\Sigma)<\infty$ і рівність
+(\ref{riv-pl-leb}) виконується для заданої параметризації
+$\Sigma$, поверхню  $\Sigma$ будемо називати {\it квадровною}.
+
+Сформулюємо деякі достатні умови квадровності поверхні $\Sigma$.
+
+ \begin{itemize}
+\item 
+Якщо $\Sigma$ --- спрямлювана поверхня (тобто, ліпшицевий образ квадрата),
+ то з результатів Т.~Радо \cite[IV.4.28, IV.4.1~(e)]{Rado} випливає, що поверхня $\Sigma$ квадровна.
+
+\item 
+Нехай компоненти $x(u,v),\,y(u,v),\,z(u,v)$ відображення
+$f$ --- абсолютно неперервні за Тонеллі (див., наприклад,
+\cite[с.~169]{Saks}). Нехай, крім того, в якобіанах $A,B,C$
+відображення $f$ в кож\-но\-му з добутків $\frac{\partial y}{\partial
+u}\frac{\partial z}{\partial v}$, $\frac{\partial y}{\partial
+v}\frac{\partial z}{\partial u}$, $\frac{\partial z}{\partial
+u}\frac{\partial x}{\partial v}$, $\frac{\partial z}{\partial
+v}\frac{\partial x}{\partial u}$, $\frac{\partial x}{\partial
+u}\frac{\partial y}{\partial v}$, $\frac{\partial x}{\partial
+v}\frac{\partial y}{\partial u}$ одна час\-тин\-на похідна належить
+класу інтегровних функцій $L_p(G)$ на $G$, а інша частинна похідна
+належить $L_q(G)$, де $\frac{1}{p}+\frac{1}{q}=1$. Тоді поверхня $\Sigma$
+квадровна (див. Т.~Радо \cite[V.2.26]{Rado}). Від\-зна\-чи\-мо, що для спрямлюваної
+поверхні $\Sigma$ компоненти $x(u,v)$,\, $y(u,v)$,\, $z(u,v)$
+відображення $f$ абсолютно неперервні за  Тонеллі (див., наприклад,
+\cite[с.~169]{Saks}).
+
+\item 
+Якщо дві компоненти відображення $f(u,v)$ є функціями Ліпшиця, а третя компонента ---
+абсолютно неперервна за Тонеллі, то поверхня $\Sigma$ квадровна (див. Т.~Радо
+\cite[V.2.28]{Rado}).
+\end{itemize}
+
+Тепер визначимо поверхневі інтеграли по квадровних поверхнях.
+
+{\it Замкнену поверхню} $\Gamma\subset\mathbb{R}^3$ розуміємо як
+образ сфери при гомеоморфному відображенні, яке відображає {\it
+хоча б одне коло на спрялювану криву}.
+
+Отже, замкнена
+поверхня $\Gamma$ подається як об'єднання двох поверхонь $\Gamma_1$,
+$\Gamma_2$, для яких $\Gamma_1\cap\Gamma_2=:\gamma$ є замкненою
+жордановою спрямлюваною кривою. 
+
+Нехай поверхні $\Gamma_1$, $\Gamma_2$ задані параметрично:
+$$
+\Gamma_1=\left\{f_1(u,v):=\big(x_1(u,v),\,y_1(u,v),\,z_1(u,v)\big):(u,v)\in
+G\right\},
+$$
+$$
+\Gamma_2=\left\{f_2(u,v):=\big(x_2(u,v),\,y_2(u,v),\,z_2(u,v)\big):(u,v)\in
+G\right\}.$$
+
+Замкнена поверхня $\Gamma$ називається {\it квадровною}\,, якщо
+поверхні $\Gamma_1$ і $\Gamma_2$ квадровні.
+
+Для замкненої квадровної поверхні $\Gamma$ і неперервної функції
+$F:\Gamma\rightarrow\mathbb{R}$ визначимо інтеграли по $\Gamma$
+рівностями
+$$\int\limits_{\Gamma}F(x,y,z)\,dydz:=\int\limits_{G}F\Big(x_1(u,v),y_1(u,v),z_1(u,v)\Big)A_1
+\,dudv-$$
+\begin{equation}\label{int-1}
+-\int\limits_{G}F\Big(x_2(u,v),y_2(u,v),z_2(u,v)\Big)A_2\,dudv,
+\end{equation}
+$$\int\limits_{\Gamma}F(x,y,z)\,dzdx:=\int\limits_{G}F\Big(x_1(u,v),y_1(u,v),z_1(u,v)\Big)B_1
+\,dudv-$$
+\begin{equation}\label{int-2}
+-\int\limits_{G}F\Big(x_2(u,v),y_2(u,v),z_2(u,v)\Big)B_2\,dudv,
+\end{equation}
+$$\int\limits_{\Gamma}F(x,y,z)\,dxdy:=\int\limits_{G}F\Big(x_1(u,v),y_1(u,v),z_1(u,v)\Big)C_1
+\,dudv-$$
+\begin{equation}\label{int-3}
+-\int\limits_{G}F\Big(x_2(u,v),y_2(u,v),z_2(u,v)\Big)C_2\,dudv
+\end{equation}
+з якобіанами $A_k,B_k,C_k$ відображення $f_k$ вигляду
+(\ref{Jacobiany}) при $k=1,2$.
+
+Легко переконатися у коректності означень (\ref{int-1})
+--- (\ref{int-3}). Справді, значення правих частин інтегралів в рівностях
+ (\ref{int-1}) --- (\ref{int-3}) однакові для усіх параметризацій $f_1$, $f_2$, для яких площі
+$\mathfrak{L}(\Gamma_1)$, $\mathfrak{L}(\Gamma_2)$ подаються
+рівностями вигляду (\ref{riv-pl-leb}), і значення правих частин
+інтегралів в рівностях (\ref{int-1}) --- (\ref{int-3}) не залежать
+від вибору спрямлюваної кривої $\gamma$, яка розбиває $\Gamma$ на
+дві частини.\vskip 2mm
+
+
+\begin{lemma}\label{lema-1} 
+Якщо $\Gamma$ замкнена квадровна поверхня, то
+\begin{equation}\label{lem-3-int-rivni-nulyu}
+\int\limits_{\Gamma}dydz=\int\limits_{\Gamma}dzdx=\int\limits_{\Gamma}dxdy=0.
+\end{equation}
+\end{lemma}
+
+
+\begin{proof}
+ За означенням
+\begin{equation}\label{lem-3-1}
+\int\limits_{\Gamma}dydz=\int\limits_{G}A_1\,dudv-\int\limits_{G}A_2\,dudv.
+\end{equation}
+З результатів Т.~Радо \cite[V.2.64~$(iii)$, IV.4.21~$(iii_3)$]{Rado}
+випливає, що для поверхонь $\Gamma_1$, $\Gamma_2$ справедливі
+наступні рівності:
+\begin{equation}\label{lem-3-2}
+\int\limits_{G}A_k\,dudv=\int\limits_{\partial G}ydz,\qquad k=1,2,
+\end{equation}
+де інтеграл в правій частині розуміємо як інтеграл Лебега--Стілтьєса,
+який беремо по межі $\partial G$ квадрата $G$ в додатному напрямку.
+Тепер з рівностей (\ref{lem-3-1}), (\ref{lem-3-2}) плививає, що перший
+інтеграл в рівності (\ref{lem-3-int-rivni-nulyu}) дорівнює нулю. Інші
+рівності (\ref{lem-3-int-rivni-nulyu}) доводяться аналогічно.
+\end{proof}
+
+\vskip 2mm
+
+
+
+\subsection{Гіперголоморфні функції. Допоміжні твердження}
+
+
+Нехай тепер\, $\mathbb{A}$ --- комутативна асоціативна алгебра над полем дійсних чисел\, $\mathbb{R}$\, з базисом\,
+$\{e_{k}\}_{k=1}^{n}$\,,\, $3\leq n<\infty$\,.
+Виділимо лінійний підпростір\,
+$E_{3}:=\{\zeta=xe_1+ye_{2}+ze_{3}: x, y, z\in\mathbb{R}\}$\,,
+породжений векторами\, $e_1,e_2,e_3$\,. Будемо використовати однакове позначення\, $\Omega$\, 
+для множини в\, ${\mathbb R}^3$\,  і для конгруентної множини в\, $E_3$\,.
+
+Розглянемо функцію $\Psi:\Omega\rightarrow\mathbb{A}$, розкладену за базисом\, $\{e_{k}\}_{k=1}^{n}$\, у вигляді
+\begin{equation}\label{Phi-form}
+\Psi(\zeta)=\sum\limits_{k=1}^{n}U_{k}(x,y,z)e_{k}\,,
+\end{equation}
+де\, $(x,y,z)\in\Omega$\, і\, $U_k :
+\Omega\rightarrow\mathbb{R}$\,.
+
+Будемо казати, що функція $\Psi: \Omega\rightarrow\mathbb{A}$
+є \textit{гіперголоморфною}\/ в області $\Omega\subset E_3$, якщо
+її дійснозначні компоненти розкладу (\ref{Phi-form}) є
+диференційовними функціями в $\Omega$ і виконується
+наступна умова в кожній точці області $\Omega$:
+\begin{equation}\label{GiperGol}
+\frac{\partial\Psi}{\partial x}\,e_1+\frac{\partial\Psi}{\partial
+y}\,e_{2}+\frac{\partial\Psi}{\partial z}\,e_{3}=0.
+\end{equation}
+
+
+
+
+В науковій літературі використовуються різні назви для функцій, які
+задовольняють рівняння вигляду (\ref{GiperGol}). Наприклад, в
+роботах А.~Садбері \cite{Sudbery}, Ф.~Коломбо, І.~Сабадіні і Д.~Струппи \cite{Colombo},
+В.~Шпрьоссіга \cite{Spr} такі функції називаються
+регулярними, а в роботах Ф.~Брекса, Р.~Деланга і Ф.~Соммена \cite{Brakx}, С.~Бернштейн \cite{Bernstein},
+Дж.~Райана \cite{Ryan} --- моногенними функціями. 
+Ми будемо використовувати термінологію робіт В.В.~Кравченка і М.В.~Шапіро \cite{Krav-Shap}
+В.~Шпрьоссіга \cite{Spros}, О.Ф.~Геруса \cite{Gerus-2011}.
+
+
+
+Нехай $\Omega$ --- обмежена замкнена множина в $\mathbb{R}^{3}$. Для
+неперервної функції $\Psi:\Omega_{\zeta}\rightarrow\mathbb{A}$, розкладеної за базисом $\{e_{k}\}_{k=1}^{n}$
+у вигляді (\ref{Phi-form}), означимо об'ємний інтеграл рівністю
+$$\int\limits_{\Omega}\Psi(\zeta)\,dx\,dy\,dz:=\sum\limits_{k=1}^{n}
+e_{k}\int\limits_{\Omega}U_{k}(x,y,z)\,dx\,dy\,dz\,.$$
+
+
+Нехай $\Gamma$ --- замкнена квадровна поверхня в $\mathbb{R}^{3}$.
+Для неперервної функції $\Psi:\Gamma_{\zeta}\rightarrow
+\mathbb{A}$, розкладеної за базисом $\{e_{k}\}_{k=1}^{n}$
+у вигляді (\ref{Phi-form}), де $(x,y,z)\in\Gamma$ і
+$U_k : \Gamma\rightarrow\mathbb{R}$, означимо поверхневий інтеграл по
+$\Gamma$ з диференціальною формою\,
+$\sigma:=dy\,dz\,e_1+dz\,dx\,e_{2}+dx\,dy\,e_{3}$\, рівністю
+\begin{multline*}
+ \int\limits_{\Gamma}\Psi(\zeta)\sigma:=
+ \sum\limits_{k=1}^{n}e_1e_{k}\int\limits_{\Gamma}U_{k}(x,y,z)\,dy\,dz+
+\sum\limits_{k=1}^{n}e_{2}e_{k}\int\limits_{\Gamma}U_{k}(x,y,z)\,dz\,dx+\\
++\sum\limits_{k=1}^{n}e_{3}e_{k}\int\limits_{\Gamma}U_{k}(x,y,z)\,dx\,dy\,,
+\end{multline*}
+де інтеграли в правій частині рівності визначені рівностями
+(\ref{int-1}) --- (\ref{int-3}).
+
+
+Наступна лема є наслідком леми \ref{lema-1} і означення диференціальної форми
+$\sigma$.\vskip 2mm
+
+
+\begin{lemma}\label{lema-2}
+Якщо $\Gamma$ --- замкнена квадровна поверхня, то
+\begin{equation}\label{int-sigma}
+\int\limits_{\Gamma}\sigma=0\,.
+\end{equation}
+\end{lemma}
+\vskip 2mm
+
+Введемо евклідову норму
+\[\|a\|:=\biggl(\sum\limits_{k=1}^n|a_k|^2\biggr)^{1/2}\] 
+в алгебрі $\mathbb{A}$, де $a=\sum\limits_{k=1}^na_k e_k$ і
+$a_k\in\mathbb{R}$ при $k=\overline{1,n}$.
+
+Нехай $\Gamma$ --- замкнена квадровна поверхня в $\mathbb{R}^{3}$.
+Для неперервної функції $U : \Gamma\rightarrow \mathbb{R}$,
+означимо поверхневий інтеграл по $\Gamma$ з диференціальною
+формою $\|\sigma\|$ рівністю 
+\begin{multline*}
+\int\limits_{\Gamma}U(xe_1+ye_{2}+ze_{3})\|\sigma\|:=\\
+:=\int\limits_{G}U\Big(x_1(u,v)e_1
++y_1(u,v)e_{2}+z_1(u,v)e_{3}\Big) \sqrt{A_1^2+B_1^2+C_1^2}\,du\,dv-\\
+-\int\limits_{G}U\Big(x_2(u,v)e_1
++y_2(u,v)e_{2}+z_2(u,v)e_{3}\Big)
+\sqrt{A_2^2+B_2^2+C_2^2}\,du\,dv\,.
+\end{multline*}
+
+
+Наступне твердження містить аналог
+формули Гаусса--Остро\-град\-сько\-го в алгебрі $\mathbb{A}$, який випливає з
+класичної формули Гаусса--Остроградського:
+
+\begin{theorem}\label{3-3:th-Ostr-Gaus}
+Нехай $\Omega$ --- однозв'язна область в $E_3$ з кусково-гладкою межею $\partial \Omega$\,. Нехай\, $\Psi :
+\Omega\rightarrow\mathbb{A}$ --- неперервна функція, що має неперервні частинні похідні першого порядку в області
+ $\Omega$, які неперервно продовжуються на межу $\partial \Omega$\,. Тоді справедливий наступний аналог
+формули Гаусса--Остроградського:
+\begin{equation}\label{3-3:form-Ostrogradsky}
+\int\limits_{\partial
+\Omega}\Psi(\zeta)\sigma=\int\limits_{\Omega}\left(\frac{\partial
+\Psi}{\partial x}\,e_1+\frac{\partial \Psi}{\partial
+y}\,e_{2}+\frac{\partial \Psi}{\partial
+z}\,e_{3}\right)dx\,dy\,dz\,.
+\end{equation}
+\end{theorem}
+
+\vskip 2mm
+
+Доведення наступної теореми подібне до доведення теореми 9 з роботи
+А.~Садбері \cite{Sudbery} і теореми 1 з роботи О.Ф.~Геруса \cite{Gerus-2011},
+де розглядалися функції, що приймають значення в алгебрі кватерніонів.
+
+
+\begin{theorem}\label{teo-Koshi-po-pov}
+Нехай \,$\partial P$ --- межа замкненого куба\, $P$\,, який міститься в області\, $\Omega\subset E_3$\,, 
+і функція\, $\Psi:\Omega\rightarrow\mathbb{A}$ --- гіперголоморфна в
+області\, $\Omega$\,. Тоді виконується наступна рівність:
+$$\int\limits_{\partial P}\Psi(\zeta)\sigma=0.$$
+\end{theorem}
+
+\begin{proof} 
+Позначимо
+\[K:=\biggl\|\,\int\limits_{\partial P}\Psi(\zeta)\sigma\biggr\|\,.\]
+Позначимо також через\, $S$\, площу поверхні\, $\partial P$\,.
+Розділимо\, $P$\, на\, $8$\, рівних кубів і позначимо через\, $P^1$\,
+такий куб, для якого
+\[\biggl\|\,\int\limits_{\partial P^1}\Psi(\zeta)\sigma\biggr\|\geq K/8\,.\] 
+Очевидно, що поверхня\, $\partial P^1$\, має площу\,
+$S/4$\,.
+
+Продовжуючи цей процес, отримаємо послідовність вкладених кубів
+$P^m$ з площами $S/4^m$ поверхонь $\partial P^m$, які задовольняють
+нерівності
+\begin{equation}\label{3-3:ocinka-1}
+\biggr\|\,\int\limits_{\partial P^m}\Psi(\zeta)\sigma\biggr\|\ge
+K/8^m.
+\end{equation}
+
+За принципом Кантора існує єдина тояка\,
+$\zeta_0:=x_0e_1+y_0e_2+z_0e_3$\,, спільна для всіх кубів\, $P^m$\,.
+Оскільки функція\, $\Psi$\, має вигляд (\ref{Phi-form}) і дійснозначні компоненти\, $U_k$\, 
+диференційовні в\, $\Omega$, то в околі точки\, $\zeta_0$\, маємо розклад
+$$\Psi(\zeta)=\Psi(\zeta_0)+\Delta x\frac{\partial
+\Psi(\zeta_0)}{\partial x}+\Delta y\frac{\partial
+\Psi(\zeta_0)}{\partial y}+\Delta z\frac{\partial
+\Psi(\zeta_0)}{\partial z}+\delta(\zeta,\zeta_0)\rho,$$ 
+де
+$\Delta x:=x-x_0$\,, $\Delta y:=y-y_0$\,, $\Delta z:=z-z_0$\,,
+і\, $\delta(\zeta,\zeta_0)$\, --- нескінченно мала функція при\,
+$\rho:=\|\zeta-\zeta_0\|\rightarrow0$\,.
+
+Тому для всіх достатньо малих кубів маємо
+\begin{multline*}
+\int\limits_{\partial
+P^m}\Psi(\zeta)\sigma=\Psi(\zeta_0)\int\limits_{\partial
+P^m}\sigma+\frac{\partial \Psi(\zeta_0)}{\partial
+x}\int\limits_{\partial P^m}\Delta x\,\sigma+\frac{\partial
+\Psi(\zeta_0)}{\partial y}\int\limits_{\partial P^m}\Delta
+y\,\sigma+\\
++\frac{\partial \Psi(\zeta_0)}{\partial z}\int\limits_{
+\partial P^m}\Delta z\,\sigma+\int\limits_{
+\partial P^m}\delta(\zeta,\zeta_0)\rho\,\sigma=\sum_{r=1}^5J_r\,.
+\end{multline*}
+
+Згідно з формулою (\ref{3-3:form-Ostrogradsky}), $J_1=0$. Використовуючи формулу
+(\ref{3-3:form-Ostrogradsky}) і враховуючи рівність (\ref{GiperGol}), отримуємо
+$$J_2+J_3+J_4=\frac{\partial \Psi(\zeta_0)}{\partial
+x}\,e_1V_m+\frac{\partial \Psi(\zeta_0)}{\partial
+y}\,e_2V_m+\frac{\partial \Psi(\zeta_0)}{\partial z}\,e_3V_m=0,$$
+де через\, $V_m$\, позначено об'єм куба\, $P^m$\,.
+
+Відзначимо, що для довільного\, $\varepsilon>0$\, існує число\, $m_0$\, таке,
+що нерівність\,
+$\|\delta(\zeta,\zeta_0)\|<\varepsilon$\, виконується
+для всіх кубів\, $P^m$\, при\, $m>m_0$\,. Відзначимо також, що\, $\rho$\,  не
+більше, ніж діагональ куба\, $P^m$\,, тобто,\,
+$\rho\leq\frac{\sqrt{S}}{2^m\sqrt{2}}$\,. Тому, використовуючи 
+згадані вище  нерівності для\,
+$\delta(\zeta,\zeta_0)$\, і\, $\rho$\,, отримуємо
+\begin{multline}\label{ocinka-4}
+\biggr\|\,\int\limits_{\partial
+P^m}\Psi(\zeta)\sigma\biggr\|=\|J_5\|\leq
+n\,M\int\limits_{\partial
+P^m}\rho\,\|\delta(\zeta,\zeta_0)\|\,\|\sigma\|\leq\\
+\le n\,M\frac{\sqrt{S}}{2^m\sqrt{2}}\,\frac{S}{4^m}\,\varepsilon\,,
+\end{multline}
+де $M$ --- деяка абсолютна стала.
+
+
+Зі співвідношень (\ref{3-3:ocinka-1}) і
+(\ref{ocinka-4}) випливає нерівність\, $K\le c\,\varepsilon $, де стала\, $c$\, 
+не залежить від\, $\varepsilon$. Перейшовши до границі в останній нерівності при\, $\varepsilon\rightarrow0$\,,
+отримаємо рівність\, $K=0$\,.
+\end{proof}
+
+\vskip 2mm
+
+
+
+\subsection{Аналог теореми Коші для поверхневого інтеграла} 
+
+
+Вста\-но\-ви\-мо аналог теореми Коші для поверхневого
+інтеграла по межі\, $\partial\Omega$\, у випадку, коли функція\,
+$\Psi:\overline{\Omega}\rightarrow\mathbb{A}$\, гіперголоморфна в області\, $\Omega$\, 
+і неперервна в замиканні\, $\overline{\Omega}$\, цієї області.
+
+
+Для функції $\Psi:\overline{\Omega}\rightarrow\mathbb{A}$\,,
+гіперголоморфної в області\, $\Omega\subset E_3$\, і неперервної в замиканні цієї області,
+розглянемо модуль неперервності 
+$$\omega_{\Psi,\overline{\Omega}}(\delta):=\sup\limits_{\zeta_1,\zeta_2\in
+\overline{\Omega}\,,\,\,\|\zeta_1-\zeta_2\|\leq\delta}\|\Psi(\zeta_1)-\Psi(\zeta_2)\|\,.$$
+
+{\it Верхньою площею Мінковського}  множини $\partial\Omega$ називається величина
+$$
+\mathcal{M}^*(\partial\Omega):=\limsup\limits_{\varepsilon\rightarrow0}\frac
+{V(\partial\Omega^\varepsilon)}{2\varepsilon}
+$$
+(див., наприклад, П.~Маттіла \cite[с.~79]{Mattila}),
+де через $V(\partial\Omega^\varepsilon)$ позначено об'єм множини
+\begin{multline*}
+\partial\Omega^\varepsilon :=\{(x,y,z)\in\mathbb{R}^3:
+\sqrt{(x-x_1)^2+(y-y_1)^2+(z-z_1)^2}\leq\varepsilon,\\
+ \, (x_1,y_1,z_1)\in \partial\Omega\}.
+\end{multline*}
+
+
+\vskip 1mm
+
+\begin{theorem}\label{Caushy-surface} 
+Нехай межею $\partial\Omega$
+однозв'язної області $\Omega\subset E_3$ є замкнена квадровна
+поверхня, для якої $\mathcal{M}^*(\partial\Omega)<\infty$, і
+$\Omega$ має вимірні за Жорданом перетини з усіма площинами, перпендикулярними до
+координатних осей. Крім того, нехай функція
+$\Psi:\overline{\Omega}\rightarrow\mathbb{A}$ є
+гіперголоморфною в області $\Omega$ і неперервною в замиканні
+$\overline{\Omega}$ цієї області. Тоді справедлива рівність 
+\[\int\limits_{\partial \Omega}\Psi(\zeta)\sigma=0.\]
+\end{theorem}
+
+\vskip 1mm
+
+
+\begin{proof}
+Оскільки  $\mathcal{M}^*(\partial\Omega)<\infty$, то існує $\varepsilon_0>0$ таке, що для всіх
+$\varepsilon\in(0,\varepsilon_0)$ виконується нерівність
+\begin{equation}\label{3-3:teo2,ner-dlja-pover}
+V(\partial\Omega^\varepsilon)\leq c\, \varepsilon,
+\end{equation}
+де стала\, $c$\, не залежить від\, $\varepsilon$.
+
+Візьмемо\, $\varepsilon<\varepsilon_0/\sqrt{3}$\,. Розіб'ємо простір
+$\mathbb{R}^3$ на куби площинами, перпендикулярними до координатних
+осей, з ребром, довжина якого менша\, $\varepsilon$\,. Тоді маємо рівність
+\begin{equation}\label{3-3:form-Koshi-po-pov-1}
+\int\limits_{\partial\Omega}\Psi(\zeta)\,\sigma=\sum\limits_j
+\int\limits_{\partial(\Omega\cap
+K^j)}\Psi(\zeta)\,\sigma+\sum\limits_k \int\limits_{\partial
+K^k}\Psi(\zeta)\,\sigma,
+\end{equation}
+де перша сума застосовується до кубів\, $K^j$\,, для яких
+$\overline{K^j}\cap\partial\Omega\ne\varnothing$\,, а друга сума
+застосовується до кубів\, $K^k$\,, для яких\,
+$\overline{K^k}\subset\Omega$\,. За теоремою
+\ref{teo-Koshi-po-pov}, друга сума
+дорівнює нулю.
+
+Для оцінки інтеграла першої суми візьмемо точку\,
+$\zeta_j\in \Omega\cap K^j$\,. Зазначимо, що діаметр множини\,
+$\Omega\cap K^j$\, не перевищує\, $\varepsilon\sqrt {3}$\,.
+Оскільки\, $\Omega$\, має вимірні за Жорданом перетини з площинами, перпендикулярними до
+осей координат, то міра Лебега меж згаданих вище перетинів дорівнює\, $0$\,,
+і тому множина\, $\partial(\Omega\cap K^j)$\, складається з квадровних поверхонь. 
+Отже, беручи до уваги рівність (\ref{int-sigma}), отримуємо
+\begin{multline}\label{3-3:teo2_ocinka-1}
+\biggr\|\,\int\limits_{\partial(\Omega\cap
+K^j)}\Psi(\zeta)\sigma\biggr\|=\biggr\|\,\int\limits_{\partial(\Omega\cap
+K^j)}(\Psi(\zeta)-\Psi(\zeta_j))\sigma\biggr\|\le\\
+\leq nM\int\limits_{\partial(\Omega\cap
+K^j)}\|\Psi(\zeta)-\Psi(\zeta_j)\|\,\|\sigma\| \leq
+nM\,\omega_{\Psi,\overline{\Omega}}(\varepsilon\sqrt{3})\int\limits
+_{\partial(\Omega\cap K^j)}\|\sigma\|\,,
+\end{multline}
+де $M$ --- деяка абсолютна стала.
+
+Таким чином, наступна оцінка є результатом рівності
+(\ref{3-3:form-Koshi-po-pov-1}) і нерівності (\ref{3-3:teo2_ocinka-1}):
+\begin{multline}\label{3-3:teo2_ocinka}
+\biggr\|\,\int\limits_{\partial\Omega}\Psi(\zeta)\,\sigma\biggr\|
+\leq nM\,\omega_{\Psi,\overline{\Omega}}(\varepsilon\sqrt{3})\,
+\sum_j\int\limits_{\partial(\Omega\cap K^j)}\|\sigma\|\le\\
+\leq nM\,\omega_{\Psi,\overline{\Omega}}(\varepsilon\sqrt{3})\,\bigg(\,\int\limits_{\partial\Omega}\|\sigma\|+6\sum_j\varepsilon^2\bigg).
+\end{multline}
+
+Оскільки\,\,
+$\bigcup_{j}K^j\subset\partial\Omega^{\varepsilon\sqrt{3}}$\,,  то,
+враховуючи нерівність (\ref{3-3:teo2,ner-dlja-pover}), отримуємо оцінку
+$$\sum_j\varepsilon^3\leq V\Big(\partial\Omega^{\varepsilon\sqrt{3}}\Big)\le
+c\varepsilon\sqrt{3}$$ з якої випливає нерівність
+\begin{equation}\label{3-3:epsilon_kv}
+\sum_j\varepsilon^2\leq c\sqrt{3}\,.
+\end{equation}
+
+Нарешті, наступна нерівність є результатом оцінок
+(\ref{3-3:teo2_ocinka}) і (\ref{3-3:epsilon_kv}):
+\begin{equation*}
+\biggr\|\,\int\limits_{\partial\Omega_\zeta}\Psi(\zeta)\sigma\biggr\|\leq
+c_1\,\omega_{\Psi,\overline{\Omega}}(\varepsilon\sqrt{3})
+\end{equation*}
+де стала\, $c_1$\, не залежить від\, $\varepsilon$.
+
+Для завершення доведення зазначимо, що\,
+$\omega_{\Psi,\overline{\Omega}}(\varepsilon\sqrt{3})\to 0$\, при\,
+$\varepsilon\rightarrow0$\, в силу рівномірної
+неперервності функції\, $\Psi$\, на\, $\overline{\Omega}$. 
+ \end{proof}
+
+\vskip 2mm
+
+
+Теорема \ref{Caushy-surface}  узагальнює теорему 1 роботи \cite{Pl-Shp3} 
+доведену для трьохвимірної комутативної алгебри 
+при додаткових припущеннях
+про межу\, $\partial\Omega$\, і задану функцію.
+Подібний аналог теореми \ref{Caushy-surface}
+доведений О.Ф.~Герусом \cite{Gerus-2018} для
+гіперголоморфних функцій в некомутативній алгебрі кватерніонів.
+
+
+
+
+Розглянемо деякі умови, за яких виконується нерівність
+(\ref{3-3:teo2,ner-dlja-pover}), що є еквівалентною умові\, $\mathcal{M}^*(\partial\Omega)<\infty$\,.
+
+\begin{itemize}
+\item 
+Зазначимо, що для поверхні $\Sigma$ в $\mathbb{R}^3$
+існують додатні сталі $c_1$ і $c_2$ такі, що
+\begin{equation}\label{3-3:naslid-1}
+c_1\varepsilon^3N_{\Sigma}(\varepsilon)\leq
+V(\Sigma^\varepsilon)\leq
+c_2\varepsilon^3N_{\Sigma}(\varepsilon)\,,
+\end{equation}
+де\, $N_{\Sigma}(\varepsilon)$ ---  найменша кількість\,
+$\varepsilon$-куль, що покривають\, $\Sigma$\, (див.
+Ф.M.~Бородіч і А.Ю.~Воловіков \cite{Borodich}).
+
+Зі співвідношення (\ref{3-3:naslid-1}) випливає, що нерівність
+(\ref{3-3:teo2,ner-dlja-pover}) еквівалентна нерівності вигляду
+\begin{equation}\label{3-3:naslid-2}
+N_{\Sigma}(\varepsilon)\,\varepsilon^2\leq c,
+\end{equation}
+де стала\, $c$\, не залежить від\, $\varepsilon$.
+
+\item 
+Враховуючи, що спрямлювана поверхня $\Sigma$\,  є
+ліпшицевим образом квадрата\, $G$\, і нерівність вигляду
+(\ref{3-3:naslid-2}) виконується для\, $G$\,,
+легко довести нерівність (\ref{3-3:naslid-2}) для такої поверхні\,
+$\Sigma$\,.
+
+\item 
+Якщо для поверхні\, $\Sigma$\, в\, $\mathbb{R}^3$\,, яка має
+скінченну двовимірну міру Хаусдорфа\, $\mathcal{H}^2(\Sigma)$\,, 
+існує додатна стала\, $c$\, така, що
+\begin{equation}\label{3-3:left-reg}
+c \varepsilon^2\leq\mathcal{H}^2\big(\Sigma\cap
+B(x,\varepsilon)\big) \quad
+\forall\,x\in\Sigma\,\,\,\forall\,\varepsilon\in(0;{\rm
+diam}\,\Sigma]\,,
+\end{equation}
+де\, ${\rm diam}\,\Sigma$ --- діаметр поверхні\, $\Sigma$\,
+і через\, $B(x,\varepsilon)$\, позначено відкриту кулю з центром\,
+$x$\, і радіусом\, $\varepsilon$, то виконуються нерівності\,
+$P_\Sigma(\varepsilon)\varepsilon^2\leq
+c_1\mathcal{H}^2(\Sigma)<\infty$\,, де\,
+$P_\Sigma(\varepsilon)$ ---
+найбільша кількість неперетинних\,
+$\varepsilon$-куль з центрами в\, $\Sigma$\, і стала\, $c_1$\, не залежить від\, $\varepsilon$\, (див.
+Р.~Абреу Блайя, Х.~Борі Рейєс і Т.~Морено-Гарсіа
+\cite[с.~309]{Abreu-Bory-Moreno-3-3}). Тому, враховуючи нерівність\, $N_{\Sigma}(2\varepsilon)\leq
+P_\Sigma(\varepsilon)$\, (див. П.~Маттіла
+\cite[с.~78]{Mattila}), отримуємо нерівність 
+(\ref{3-3:naslid-2}) для поверхні\, $\Sigma$\,, яка задовольняє умову (\ref{3-3:left-reg}).
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%
+\begin{remark}
+Має інтерес розгляд комутативних асоціативних алгебр $\mathbb{A}_n^m$, в яких існують
+лінійно незалежні над полем $\mathbb R$ елементи $e_1, e_2, e_3$, що задовольняють умову
+\begin{equation}
+\label{sbel}
+     e_1^2+e_2^2+e_3^2=0\,.
+\end{equation}
+Такі алгебри називаються {\it гармонічними}, оскільки в них кожна моногенна функція $\Phi(\zeta)$ змінної
+$\zeta=xe_1+ye_2+ze_3$ задовольняє тривимірне рівняння Лапласа в силу
+співвідношень
+\[\left(\frac{{\partial}^2}{{\partial x}^2}+
+ \frac{{\partial}^2}{{\partial y}^2}+
+\frac{{\partial}^2}{{\partial z}^2}\right) \Phi(\zeta)\equiv
+\Phi_G''(\zeta) \, (e_1^2+e_2^2+e_3^2)=0\]
+(див., наприклад, \cite{Ketchum-28,Mel'nichenko75,Mel-Plaksa,Pl-Shp1,Plaksa12})
+подібно до того, як кожна голоморфна функція комплексної змінної задовольняє двовимірне рівняння Лаплаа.
+
+
+Зазначимо, що у випадку лінійної оболонки $E_3$, для якої
+виконуються умови \eqref{3-1:cond-on-E3}, \eqref{sbel} і\, $e_1=1$\,,
+моногенні функції вказаної змінної $\zeta$ утворюють підмножину гіперголоморфних функцій. 
+Дійсно, кожна моногенна функція $\Phi \colon \Omega\rightarrow\mathbb{A}_n^m$ має
+$\mathbb{R}$-диференційовні компоненти $U_k$ в розкладі \eqref{3-1:rozklad-Phi-v-bazysi} в області $\Omega$, 
+і в цій області виконуються умови \eqref{Umovy_K-R}, наслідком яких є рівності
+\[\frac{\partial\Phi}{\partial x}\,e_1+\frac{\partial\Phi}{\partial
+y}\,e_{2}+\frac{\partial\Phi}{\partial z}\,e_{3}=\frac{\partial\Phi}{\partial x}\, (e_1^2+e_2^2+e_3^2)=0\,.\]
+
+У той же час існують гіперголоморфні функції
+які не є моногенними. Наприклад, функція
+$\Psi(x+ye_2+ze_3)=ze_{2}-ye_{3}$ задовольняє умову
+(\ref{GiperGol}), але не задовольняє необхідні умови моногенності, а саме рівності
+вигляду \eqref{Umovy_K-R}.
+
+Аналогічно, існують гіперголомофні функції, які не задовольняють тривимірне рівняння Лапласа. Наприклад, функція
+\[\Psi(xe_1+ye_2+ze_3)=x^2e_1+i\left(x^2+\frac{z^2}{2}\right)e_2+(xz+x+iy)e_3\]
+задовольняє рівняння (\ref{GiperGol}), але компоненти
+$x^2$ і $x^2+z^2/2$ не є просторовими гармонічними функціями.
+\end{remark}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%
+
+
+
+%---------------  bibliography
+
+
+\bibliographystyle{imnanu}
+\bibliography{mybiblio2}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%!!!!!! do not change this line - it will print the correct number of the last page
+\label{last_page:\thearticlesnum}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
+
+}

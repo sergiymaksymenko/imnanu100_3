@@ -1,0 +1,61 @@
+% !TeX encoding = UTF-8
+\documentclass[11pt, reqno]{amsart}
+
+\def\XELATEX{1}
+
+\input{style/init.tex}
+\input{style/hyphenation.tex}
+
+\def\Year{2022}
+\def\Volume{19}
+\def\Number{1}
+%% кількість друкарських аркушів, та дати замовлення на друк
+\def\UmDruk{23.71} % { 0.93 * pages_number / 16 = 0.058125 * pages_number } % 412 сторінок
+\def\Zamovlennya{21}
+\def\DataZamovlennya{11.04.2021}
+
+
+% %%% packages for use with XeLaTeX
+% %%% the fonts will be nicer
+% \usepackage{fontspec}
+% \setmainfont[
+%   Ligatures=TeX,
+%   Extension=.otf,
+%   BoldFont=cmunbx,
+%   ItalicFont=cmunti,
+%   BoldItalicFont=cmunbi,
+% ]{cmunrm}
+% \usepackage{xecyr}
+
+% \input{style/use_bibunits.tex}
+\input{style/use_biblatex.tex}
+\addpaper{drozd}{drozd_biblio}
+\addpaper{maksymenko}{maksymenko_biblio}
+\addpaper{kachanovsky}{kachanovsky_biblio}
+
+\allowdisplaybreaks
+
+\begin{document}
+% front cover page, comment this line if you do not have that page:
+% \includepdf{cover/cover_0.pdf}
+\selectlanguage{ukrainian}
+% \input{texts/title.tex}
+%  texts/grave/  grave.tex  biblio.bib  ukrainian/english
+
+% \PAPER{drozd}{drozd.tex}{drozd_biblio}{ukrainian}{699}
+% \PAPER{maksymenko}{maksymenko.tex}{maksymenko_biblio}{english}{}
+\PAPER{kachanovsky}{kachanovsky.tex}{kachanovsky_biblio}{ukrainian}{}
+%\PAPER{Gerasymenko}{Proc22_Gerasymenko.tex}{biblio_G}{ukrainian}{}
+% \PAPER{Grushka}{Grushka.tex}{grushka}{ukrainian}{}
+%\PAPER{Denega}{Denega.tex}{biblio}{ukrainian}{}
+%\PAPER{Zabolotny}{Zabolotnyi.tex}{biblio}{ukrainian}{}
+% \PAPER{osipchuk}{osipchuk.tex}{osipchuk}{ukrainian}{}
+%\PAPER{Plaksa}{Plaksa2-zb.tex}{biblio}{ukrainian}{}
+%\PAPER{Targonsky}{Targonsky.tex}{biblio}{ukrainian}{}
+%\PAPER{Salimov-Klish}{Sal_Klish.tex}{biblio3}{ukrainian}{}
+%\PAPER{Salimov-Stef}{Salimov_Stefanchuk.tex}{biblio}{ukrainian}{}
+% \input{texts/zmist.tex}
+% \input{texts/last_page.tex}
+% backward cover page, comment this line if you do not have that page:
+% \includepdf{cover/cover_1.pdf}
+\end{document}
